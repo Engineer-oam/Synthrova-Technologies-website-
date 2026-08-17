@@ -1,13 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-synthrova-black: #0a0a0a;
-  --color-synthrova-offwhite: #f5f5f5;
-  --color-synthrova-white: #ffffff;
-  --color-synthrova-grey: #e5e5e5;
-  --color-synthrova-darkgrey: #1a1a1a;
-  --color-synthrova-deepblue: #002244;
-  --color-synthrova-cyan: #00e5ff;
+  /* Brand Colors (Motion Accent Only) */
+  --color-synthrova-blue: #168FEA;
+
+  /* Neutrals (Exact requested) */
+  --color-synthrova-black: #0A0A0A;
+  --color-synthrova-white: #FFFFFF;
+  --color-synthrova-offwhite: #F3F3F1;
+  --color-synthrova-lightgrey: #E7E7E4;
 }
 
 @layer base {
@@ -16,6 +17,7 @@
   }
 }
 
+/* Base text balancing utilities */
 .text-balance {
   text-wrap: balance;
 }
