@@ -1,0 +1,8 @@
+{
+  "name": "Synthrova Technologies",
+  "description": "Synthrova is a deep-technology company building infrastructure, intelligent systems and mission-critical technology across regulated industries and emerging strategic domains.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
