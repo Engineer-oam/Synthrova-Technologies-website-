@@ -5,8 +5,8 @@ export function Footer() {
     <footer className="bg-synthrova-black text-synthrova-white py-20 px-6 lg:px-8 border-t border-synthrova-white/10">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
         <div className="lg:col-span-1">
-          <Link to="/" className="inline-block mb-6 bg-white/90 p-2 rounded-sm w-fit">
-            <img src="https://drive.google.com/uc?export=view&id=1dJjbXPsCrYKbQIxkZUM3TsQqvdp_X27S" alt="Synthrova" className="h-8 object-contain" />
+          <Link to="/" className="inline-block mb-6 group">
+            <img src="/images/logo-dark.jpg" alt="Synthrova Logo" className="h-10 object-contain opacity-90 group-hover:opacity-100 transition-opacity mix-blend-screen" />
           </Link>
           <p className="text-sm text-synthrova-grey mb-6 text-balance">
             Technology for the systems that matter.

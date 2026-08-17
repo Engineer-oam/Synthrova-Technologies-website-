@@ -44,9 +44,9 @@ export function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8 h-20 flex items-center justify-between">
-          <Link to="/" className="flex items-center">
-            <div className={`transition-all duration-300 ${isDarkBg ? 'bg-white/90 p-1.5 rounded-sm' : ''}`}>
-              <img src="https://drive.google.com/uc?export=view&id=1dJjbXPsCrYKbQIxkZUM3TsQqvdp_X27S" alt="Synthrova" className="h-6 md:h-8 object-contain" />
+          <Link to="/" className="flex items-center group">
+            <div className={`transition-all duration-300`}>
+              <img src={isDarkBg ? "/images/logo-dark.jpg" : "/images/logo.png"} alt="Synthrova Logo" className={`h-8 md:h-10 object-contain transition-all duration-500 ${isDarkBg ? 'opacity-90 group-hover:opacity-100 mix-blend-screen' : 'mix-blend-multiply'}`} />
             </div>
           </Link>
 
@@ -105,8 +105,8 @@ export function Navbar() {
             className="fixed inset-0 z-[60] bg-synthrova-black text-synthrova-white flex flex-col"
           >
             <div className="flex-none px-6 h-20 flex items-center justify-between border-b border-synthrova-white/10">
-              <Link to="/" className="flex items-center bg-white/90 p-1.5 rounded-sm w-fit">
-                <img src="https://drive.google.com/uc?export=view&id=1dJjbXPsCrYKbQIxkZUM3TsQqvdp_X27S" alt="Synthrova" className="h-6 object-contain" />
+              <Link to="/" className="flex items-center group">
+                <img src="/images/logo-dark.jpg" alt="Synthrova Logo" className="h-8 object-contain opacity-90 group-hover:opacity-100 transition-opacity mix-blend-screen" />
               </Link>
               <button
                 className="p-2 -mr-2"
