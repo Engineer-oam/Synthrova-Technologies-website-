@@ -42,18 +42,18 @@ export function Contact() {
       />
       
       {/* LEFT: Dark Background (Sticky on desktop) */}
-      <div className="lg:w-1/2 bg-synthrova-white text-synthrova-black relative">
-        <div className="lg:sticky lg:top-0 lg:h-screen p-10 md:p-16 lg:p-24 pt-32 lg:pt-40 flex flex-col overflow-hidden">
+      <div className="lg:w-1/2 bg-synthrova-black text-synthrova-white relative flex flex-col justify-center min-h-[100svh]">
+        <div className="lg:sticky lg:top-0 lg:h-screen p-10 md:p-16 lg:p-24 pt-32 lg:pt-40 flex flex-col justify-center overflow-hidden">
           
           <div className="relative z-10">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight mb-8 text-balance leading-tight">
               Let's build what comes next.
             </h1>
-            <p className="text-xl md:text-2xl font-light text-synthrova-black/70 max-w-md leading-relaxed text-balance mb-12">
+            <p className="text-xl md:text-2xl font-light text-synthrova-white/70 max-w-md leading-relaxed text-balance mb-12">
               Tell us about your organization, technology challenge, ecosystem or potential collaboration.
             </p>
             <div className="flex flex-col gap-2">
-              <span className="text-sm font-mono tracking-widest uppercase text-synthrova-black/50">Direct Inquiries</span>
+              <span className="text-sm font-mono tracking-widest uppercase text-synthrova-white/50">Direct Inquiries</span>
               <a href="mailto:info.synthrova@gmail.com" className="text-lg md:text-xl font-medium hover:text-synthrova-blue transition-colors w-fit">
                 info.synthrova@gmail.com
               </a>

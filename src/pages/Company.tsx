@@ -209,7 +209,7 @@ function InformationSection() {
             <div className="border-t border-synthrova-lightgrey">
               <div className="py-6 border-b border-synthrova-lightgrey flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <span className="font-mono text-sm tracking-widest text-synthrova-white/50 uppercase">Entity</span>
-                <span className="text-lg font-light">Synthrova Technologies Pvt. Ltd.</span>
+                <span className="text-lg font-light">Synthrova Technologies Private Limited</span>
               </div>
               <div className="py-6 border-b border-synthrova-lightgrey flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <span className="font-mono text-sm tracking-widest text-synthrova-white/50 uppercase">Jurisdiction</span>
@@ -281,7 +281,7 @@ export function Company() {
   return (
     <div className="w-full selection:bg-synthrova-blue/30 selection:text-synthrova-black">
       <SEO 
-        title="About Synthrova Technologies"
+        title="About Synthrova Technologies | Technology Infrastructure Company"
         description="Synthrova builds intelligent infrastructure for critical systems and regulated industries."
         canonical="/company"
       />

@@ -14,7 +14,7 @@ function HeroVisualization() {
     return () => clearInterval(timer);
   }, []);
 
-  const systems = ["ERP", "WMS", "TMS", "Gov", "Fin", "IoT"];
+  const systems = ["enterprise systems", "WMS", "TMS", "Gov", "Fin", "IoT"];
 
   return (
     <div className="relative w-full h-[400px] border border-synthrova-white/10 bg-synthrova-black mt-12 overflow-hidden flex items-center justify-center">
@@ -105,7 +105,7 @@ function InteractiveArchitecture() {
       id: "01",
       title: "CONNECT",
       desc: "Ingestion and mapping of diverse operational data sources.",
-      items: ["ERP", "WMS", "TMS", "Financial systems", "Quality systems", "Regulatory systems", "Industrial systems"]
+      items: ["enterprise systems", "WMS", "TMS", "Financial systems", "Quality systems", "Regulatory systems", "Industrial systems"]
     },
     {
       id: "02",
@@ -188,7 +188,7 @@ export function Platform() {
   return (
     <div className="w-full bg-synthrova-white selection:bg-synthrova-blue/30 selection:text-synthrova-black">
       <SEO 
-        title="Synthrova Platform | Intelligent Technology Infrastructure"
+        title="Platform | Synthrova Technologies"
         description="Explore Synthrova's technology platforms across data infrastructure, artificial intelligence, and automated decision-making for regulated industries."
         canonical="/platform"
       />

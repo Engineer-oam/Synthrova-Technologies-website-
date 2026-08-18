@@ -291,7 +291,7 @@ export function Terms() {
                     For legal inquiries or notices regarding these Terms, please contact our counsel at:
                   </p>
                   <p className="font-mono text-sm text-synthrova-black bg-synthrova-black/5 p-4 inline-block">
-                    legal@synthrova.com
+                    legal@synthrova.in
                   </p>
                 </div>
 

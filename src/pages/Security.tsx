@@ -289,13 +289,13 @@ export function Security() {
             Security researchers and users can report potential vulnerabilities through our responsible disclosure process.
           </p>
           <a 
-            href={`mailto:security-reports@synthrova.com`} 
+            href={`mailto:security-reports@synthrova.in`} 
             className="inline-flex items-center px-8 py-4 border border-synthrova-black text-synthrova-black hover:bg-synthrova-black hover:text-synthrova-white transition-colors group text-sm"
           >
             Report a Vulnerability <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </a>
           <p className="mt-8 text-xs font-mono text-synthrova-black/40">
-            {`Direct contact: security-reports@synthrova.com`}
+            {`Direct contact: security-reports@synthrova.in`}
           </p>
         </div>
       </section>

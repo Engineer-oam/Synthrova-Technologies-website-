@@ -9,21 +9,31 @@ export function ELedger() {
   return (
     <div className="w-full bg-synthrova-white selection:bg-synthrova-blue/30 selection:text-synthrova-black">
       <SEO 
-        title="E-Ledger | B2B Compliance Infrastructure & RegTech | Synthrova"
-        description="E-Ledger is compliance and transaction infrastructure for regulated supply chains. It connects organizations across existing systems to create a trusted shared layer."
+        title="E-Ledger | Compliance Infrastructure for Regulated Supply Chains"
+        description="E-Ledger is Synthrova Technologies' compliance infrastructure platform for regulated supply chains, enabling shared transaction records, reconciliation, traceability and audit readiness."
         canonical="/eledger"
-        schema={{
-          "@context": "https://schema.org",
-          "@type": "SoftwareApplication",
-          "name": "E-Ledger",
-          "operatingSystem": "Web",
-          "applicationCategory": "BusinessApplication",
-          "provider": {
-            "@type": "Organization",
-            "name": "Synthrova Technologies"
+        schema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "E-Ledger",
+            "operatingSystem": "Web",
+            "applicationCategory": "BusinessApplication",
+            "provider": {
+              "@type": "Organization",
+              "name": "Synthrova Technologies Private Limited",
+              "url": "https://synthrova.in/"
+            },
+            "description": "E-Ledger is Synthrova Technologies' compliance infrastructure platform for regulated supply chains, enabling shared transaction records, reconciliation, traceability and audit readiness."
           },
-          "description": "E-Ledger is compliance and transaction infrastructure for regulated supply chains, creating a shared layer for reconciliation and traceability."
-        }}
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Synthrova Technologies Private Limited",
+            "url": "https://synthrova.in/",
+            "logo": "https://synthrova.in/logo.png"
+          }
+        ]}
       />
 
       <HeroSection />
@@ -140,7 +150,7 @@ function SolutionSection() {
         
         <div className="flex flex-col items-center max-w-2xl mx-auto">
           <div className="w-full p-6 border border-synthrova-white/20 text-center font-mono tracking-widest uppercase">
-            Enterprise Systems
+            Ententerprise systemsrise Systems
           </div>
           <div className="h-12 w-px bg-synthrova-blue/50 my-2"></div>
           <div className="w-full p-8 border border-synthrova-blue bg-synthrova-blue/5 text-center text-2xl font-light tracking-widest uppercase shadow-[0_0_40px_rgba(0,188,212,0.1)]">
@@ -163,7 +173,7 @@ function SolutionSection() {
 function StakeholdersSection() {
   const [active, setActive] = useState(0);
   const stakeholders = [
-    { name: "Enterprise", desc: "Reduce reconciliation and compliance friction.", icon: Layers },
+    { name: "Ententerprise systemsrise", desc: "Reduce reconciliation and compliance friction.", icon: Layers },
     { name: "Auditor", desc: "Access structured, traceable evidence.", icon: Search },
     { name: "Regulator", desc: "Potentially gain better visibility into regulated activity.", icon: Shield },
     { name: "Supply Chain", desc: "Improve transaction integrity and traceability.", icon: Share2 }
@@ -341,7 +351,7 @@ function ReconciliationSection() {
           From fragmented matching to a continuous transaction history.
         </h2>
         <p className="text-xl text-synthrova-black/70 mb-20 max-w-3xl mx-auto font-light text-balance">
-          As a comprehensive B2B compliance infrastructure and RegTech platform, E-Ledger eliminates the need to cross-reference disjointed database tables by enforcing a shared, cryptographically verified chain of events. It automates enterprise transaction reconciliation, replacing manual three-way and four-way matching with instant, mathematically proven consensus.
+          As a comprehensive B2B compliance infrastructure and RegTech platform, E-Ledger eliminates the need to cross-reference disjointed database tables by enforcing a shared, cryptographically verified chain of events. It automates ententerprise systemsrise transaction reconciliation, replacing manual three-way and four-way matching with instant, mathematically proven consensus.
         </p>
         
         <div className="flex flex-col md:flex-row items-center justify-center gap-12">
@@ -377,11 +387,11 @@ function ReconciliationSection() {
 
 function ArchitectureSection() {
   const stack = [
-    { title: "Existing Enterprise Systems", desc: "Your ERP, Accounting, WMS, Procurement, Laboratory, and Manufacturing systems remain the operational source of truth inside your organization.", highlight: false },
+    { title: "Existing Ententerprise systemsrise Systems", desc: "Your enterprise systems, Accounting, WMS, Procurement, Laboratory, and Manufacturing systems remain the operational source of truth inside your organization.", highlight: false },
     { title: "Integration Layer", desc: "Standardized REST/GraphQL APIs and secure gateways connect your internal systems to the external network.", highlight: false },
     { title: "E-Ledger", desc: "The shared compliance and transaction infrastructure.", highlight: true },
     { title: "Shared Compliance + Transaction Layer", desc: "An independent, cryptographically verified infrastructure layer that maintains a unified state of transactions across organizational boundaries.", highlight: false },
-    { title: "Network Participants", desc: "Enterprises, Auditors, Regulators, and Supply Chain Partners interact with a synchronized, trusted record.", highlight: false }
+    { title: "Network Participants", desc: "Ententerprise systemsrises, Auditors, Regulators, and Supply Chain Partners interact with a synchronized, trusted record.", highlight: false }
   ];
 
   return (

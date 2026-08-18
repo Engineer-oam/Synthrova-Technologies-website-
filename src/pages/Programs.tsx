@@ -224,7 +224,7 @@ export function Programs() {
   return (
     <div className="w-full selection:bg-synthrova-blue/30 selection:text-synthrova-black">
       <SEO 
-        title="Programs & Initiatives | Synthrova Technologies"
+        title="Programs | Synthrova Technologies"
         description="Explore Synthrova Technologies' emerging programs in Artificial Intelligence, Energy systems, and Defence & Security infrastructure."
         canonical="/programs"
       />

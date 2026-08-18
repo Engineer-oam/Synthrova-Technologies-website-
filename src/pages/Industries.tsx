@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { SEO } from "../components/SEO";
-import { ArrowRight, ChevronRight, Activity, Beaker, Building2, Scale, Package, Wheat, Search, Box, Network } from "lucide-react";
+import { ArrowRight, Zap, Shield, ChevronRight, Activity, Beaker, Building2, Scale, Package, Wheat, Search, Box, Network } from "lucide-react";
 import { Link } from "react-router-dom";
 
 function HeroSection() {
@@ -24,48 +24,34 @@ function HeroSection() {
 const industries = [
   {
     id: "pharmaceuticals",
-    title: "Pharmaceuticals",
-    desc: "Trusted transaction and compliance infrastructure for pharmaceutical supply chains.",
-    status: "Current focus",
+    title: "Pharmaceuticals & Healthcare",
+    desc: "Trusted transaction and compliance infrastructure for pharmaceutical supply chains, serialization, and regulatory reporting.",
+    status: "Current",
     icon: Beaker,
     link: "/pharmaceuticals",
     cta: "Explore Pharmaceuticals"
   },
   {
+    id: "energy",
+    title: "Energy Technology",
+    desc: "Decentralized energy grid management, trading verification, and infrastructure for transition technologies.",
+    status: "Research / Exploration",
+    icon: Zap
+  },
+  {
+    id: "defence",
+    title: "Defence Technology",
+    desc: "Secure, partitioned communication and logistics networks that require absolute operational integrity.",
+    status: "In Development",
+    icon: Shield
+  },
+  {
     id: "government",
-    title: "Government & Regulation",
-    desc: "Technology connecting regulated entities, evidence and oversight.",
-    status: "Strategic domain",
+    title: "Government & Regulated Supply Chains",
+    desc: "Technology connecting regulated entities, evidence and oversight for excise and controlled goods.",
+    status: "Future",
     icon: Building2
   },
-  {
-    id: "excise",
-    title: "Excise & Controlled Goods",
-    desc: "Infrastructure for highly regulated transactions and supply chains.",
-    status: "Future application",
-    icon: Scale
-  },
-  {
-    id: "fmcg",
-    title: "FMCG",
-    desc: "Trusted supply-chain records across distributed networks.",
-    status: "Future application",
-    icon: Package
-  },
-  {
-    id: "agriculture",
-    title: "Agriculture",
-    desc: "Traceability and transaction infrastructure across complex agricultural ecosystems.",
-    status: "Future application",
-    icon: Wheat
-  },
-  {
-    id: "future",
-    title: "Future Industries",
-    desc: "Explore emerging regulated sectors.",
-    status: "R&D",
-    icon: Search
-  }
 ];
 
 function GridSection() {

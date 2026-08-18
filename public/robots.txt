@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://synthrova.com/sitemap.xml
+Sitemap: https://synthrova.in/sitemap.xml

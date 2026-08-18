@@ -14,7 +14,7 @@ function HeroVisualization() {
     return () => clearInterval(timer);
   }, []);
 
-  const fragments = ["ERP", "WMS", "TMS", "Government systems", "Energy systems", "Industrial systems", "AI systems", "Defence systems"];
+  const fragments = ["enterprise systems", "WMS", "TMS", "Government systems", "Energy systems", "Industrial systems", "AI systems", "Defence systems"];
   const branches = ["E-Ledger", "AI", "Energy", "Defence", "Future Systems"];
 
   return (
@@ -115,22 +115,31 @@ export function Home() {
   return (
     <div className="w-full bg-synthrova-white selection:bg-synthrova-blue/30 selection:text-synthrova-black">
       <SEO 
-        title="Synthrova Technologies | Technology for Critical Systems"
-        description="Synthrova builds intelligent infrastructure for critical systems and regulated industries."
+        title="Synthrova Technologies | Compliance Infrastructure for Regulated Industries"
+        description="Synthrova Technologies builds compliance infrastructure and technology platforms for regulated industries, starting with E-Ledger for pharmaceutical supply chains, reconciliation, traceability and audit readiness."
         canonical="/"
-        schema={{
-          "@context": "https://schema.org",
-          "@type": ["Organization", "WebSite"],
-          "name": "Synthrova Technologies",
-          "legalName": "Synthrova Technologies Private Limited",
-          "url": "https://synthrova.com",
-          "description": "Synthrova builds intelligent infrastructure for critical systems and regulated industries.",
-          "sameAs": [
-            "https://www.linkedin.com/company/synthrova/",
-            "https://x.com/Synthrova",
-            "https://www.instagram.com/synthrova?igsh=MTVheXA5NmRydWdjcw=="
-          ]
-        }}
+        schema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Synthrova Technologies Private Limited",
+            "url": "https://synthrova.in/",
+            "logo": "https://synthrova.in/logo.png",
+            "description": "Synthrova Technologies is a technology company building compliance infrastructure and technology platforms for regulated industries.",
+            "sameAs": [
+              "https://www.linkedin.com/company/synthrova/",
+              "https://x.com/Synthrova",
+              "https://www.instagram.com/synthrova?igsh=MTVheXA5NmRydWdjcw=="
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Synthrova Technologies",
+            "alternateName": "Synthrova",
+            "url": "https://synthrova.in/"
+          }
+        ]}
       />
       {/* SECTION 1: HERO */}
       <section className="relative min-h-screen bg-synthrova-black text-synthrova-white pt-32 pb-24 flex flex-col justify-center">
@@ -141,7 +150,7 @@ export function Home() {
             transition={{ duration: 0.8 }}
             className="text-5xl md:text-7xl font-light tracking-tight mb-8 max-w-4xl text-balance"
           >
-            Technology for the systems that matter.
+            Building Technology Infrastructure for What Comes Next.
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -149,7 +158,7 @@ export function Home() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl md:text-2xl font-light text-synthrova-white/70 max-w-3xl leading-relaxed mb-12 text-balance"
           >
-            Synthrova builds infrastructure, intelligence and mission-critical technology across regulated industries and emerging strategic domains.
+            Synthrova Technologies builds technology infrastructure for regulated industries, connecting compliance, transactions, data and emerging technologies.
           </motion.p>
           
           <motion.div 

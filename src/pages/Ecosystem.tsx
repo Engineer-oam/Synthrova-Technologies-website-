@@ -198,7 +198,7 @@ function TechnologyPartnersSection() {
             <ul className="space-y-4 font-light text-lg">
               <li className="flex items-center"><Zap className="w-5 h-5 text-synthrova-blue mr-3" /> REST & GraphQL APIs</li>
               <li className="flex items-center"><Zap className="w-5 h-5 text-synthrova-blue mr-3" /> Event-driven webhook integration</li>
-              <li className="flex items-center"><Zap className="w-5 h-5 text-synthrova-blue mr-3" /> ERP and WMS connectivity adapters</li>
+              <li className="flex items-center"><Zap className="w-5 h-5 text-synthrova-blue mr-3" /> enterprise systems and WMS connectivity adapters</li>
             </ul>
           </div>
           <div className="lg:w-1/2">

@@ -13,7 +13,7 @@ export function Footer() {
             Technology for the systems that matter.
           </p>
           <p className="text-xs text-synthrova-white/50">
-            Synthrova Technologies Pvt. Ltd.<br />
+            Synthrova Technologies Private Limited<br />
             India
           </p>
         </div>
@@ -65,7 +65,7 @@ export function Footer() {
       </div>
       
       <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-synthrova-white/10 text-[10px] tracking-wider uppercase font-mono text-synthrova-white/40 flex flex-col md:flex-row justify-between items-start md:items-center">
-        <p>© {new Date().getFullYear()} Synthrova Technologies Pvt. Ltd. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Synthrova Technologies Private Limited All rights reserved.</p>
       </div>
     </footer>
   );

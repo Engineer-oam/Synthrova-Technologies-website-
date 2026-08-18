@@ -9,8 +9,8 @@ interface SEOProps {
   ogType?: string;
 }
 
-export function SEO({ title, description, canonical, schema, ogImage = 'https://synthrova.com/images/og-image.jpg', ogType = 'website' }: SEOProps) {
-  const url = canonical ? `https://synthrova.com${canonical}` : 'https://synthrova.com';
+export function SEO({ title, description, canonical, schema, ogImage = 'https://synthrova.in/images/og-image.jpg', ogType = 'website' }: SEOProps) {
+  const url = canonical ? `https://synthrova.in${canonical}` : 'https://synthrova.in';
 
   return (
     <Helmet>

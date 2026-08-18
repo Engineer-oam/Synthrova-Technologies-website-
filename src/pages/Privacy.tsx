@@ -265,7 +265,7 @@ export function Privacy() {
                     For inquiries concerning this Privacy Policy, data management practices, or compliance architecture, please reach out to our team at:
                   </p>
                   <p className="font-mono text-sm text-synthrova-black bg-synthrova-black/5 p-4 inline-block">
-                    privacy@synthrova.com
+                    privacy@synthrova.in
                   </p>
                 </div>
 
