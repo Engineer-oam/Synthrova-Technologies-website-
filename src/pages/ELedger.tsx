@@ -10,7 +10,7 @@ export function ELedger() {
     <div className="w-full bg-synthrova-white selection:bg-synthrova-blue/30 selection:text-synthrova-black">
       <SEO 
         title="E-Ledger | B2B Compliance Infrastructure & RegTech | Synthrova"
-        description="E-Ledger is a B2B RegTech platform developed by Synthrova Technologies to create cryptographically verified records, automated reconciliation, and pharmaceutical supply chain traceability."
+        description="E-Ledger is compliance and transaction infrastructure for regulated supply chains. It connects organizations across existing systems to create a trusted shared layer."
         canonical="/eledger"
         schema={{
           "@context": "https://schema.org",
@@ -22,7 +22,7 @@ export function ELedger() {
             "@type": "Organization",
             "name": "Synthrova Technologies"
           },
-          "description": "E-Ledger creates a trusted transaction, compliance, reconciliation and interoperability layer for regulated supply chains."
+          "description": "E-Ledger is compliance and transaction infrastructure for regulated supply chains, creating a shared layer for reconciliation and traceability."
         }}
       />
 
@@ -54,7 +54,7 @@ function HeroSection() {
             A trusted transaction layer for regulated commerce.
           </h1>
           <p className="text-xl md:text-2xl font-light text-synthrova-black/70 max-w-2xl leading-relaxed mb-12 text-balance">
-            Connect organizations, transactions and compliance records without replacing the systems you already use.
+            It connects organizations, transactions and compliance workflows across existing systems to create a trusted shared layer for reconciliation, traceability and auditability.
           </p>
           <Link to="/contact" className="px-8 py-4 bg-synthrova-black text-synthrova-white font-medium hover:bg-synthrova-lightgrey transition-colors inline-flex items-center group">
             Request a Demo
@@ -377,23 +377,31 @@ function ReconciliationSection() {
 
 function ArchitectureSection() {
   const stack = [
-    { title: "Enterprise Systems", desc: "Existing ERP, WMS, and local databases." },
-    { title: "Integration / API Layer", desc: "Standardized REST/GraphQL gateways." },
-    { title: "E-Ledger Transaction Layer", desc: "Hyperledger Fabric providing distributed ledger capabilities, smart contracts, and consensus." },
-    { title: "Identity & Permissions", desc: "Cryptographic certificates and RBAC." },
-    { title: "Audit & Compliance Infrastructure", desc: "Continuous compliance monitoring, automated regulatory reporting, and an immutable compliance audit trail." },
-    { title: "Data Infrastructure", desc: "Off-chain storage for large payloads." },
-    { title: "Analytics / Intelligence", desc: "Real-time network visibility and pattern analysis." },
+    { title: "Existing Enterprise Systems", desc: "Your ERP, Accounting, WMS, Procurement, Laboratory, and Manufacturing systems remain the operational source of truth inside your organization.", highlight: false },
+    { title: "Integration Layer", desc: "Standardized REST/GraphQL APIs and secure gateways connect your internal systems to the external network.", highlight: false },
+    { title: "E-Ledger", desc: "The shared compliance and transaction infrastructure.", highlight: true },
+    { title: "Shared Compliance + Transaction Layer", desc: "An independent, cryptographically verified infrastructure layer that maintains a unified state of transactions across organizational boundaries.", highlight: false },
+    { title: "Network Participants", desc: "Enterprises, Auditors, Regulators, and Supply Chain Partners interact with a synchronized, trusted record.", highlight: false }
   ];
 
   return (
     <section className="py-32 bg-synthrova-black text-synthrova-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <h2 className="text-3xl md:text-5xl font-light mb-16 tracking-tight">Technical Architecture</h2>
-        <div className="max-w-4xl mx-auto">
+        <h2 className="text-3xl md:text-5xl font-light mb-16 tracking-tight text-center">Infrastructure Architecture</h2>
+        <div className="max-w-4xl mx-auto relative">
+          
+          <div className="absolute left-6 md:left-[30%] top-12 bottom-12 w-[1px] bg-synthrova-white/10 hidden md:block">
+            <div className="w-full h-1/4 bg-synthrova-blue/50 absolute top-[40%] animate-[pulse_4s_ease-in-out_infinite]"></div>
+          </div>
+
           {stack.map((layer, i) => (
-            <div key={i} className={`p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between border-b ${i === 2 ? 'border-synthrova-blue bg-synthrova-blue/5' : 'border-synthrova-white/10'}`}>
-              <div className={`font-medium text-lg md:text-xl md:w-1/3 pr-8 ${i === 2 ? 'text-synthrova-blue' : 'text-synthrova-white'}`}>
+            <div key={i} className={`relative p-6 md:p-10 flex flex-col md:flex-row md:items-center justify-between border-b ${layer.highlight ? 'border-synthrova-blue bg-synthrova-blue/5' : 'border-synthrova-white/10'}`}>
+              
+              <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 text-synthrova-white/20 hidden md:block">
+                {i < stack.length - 1 && <ArrowRight className="w-5 h-5 rotate-90" />}
+              </div>
+
+              <div className={`font-medium text-lg md:text-xl md:w-1/3 pr-8 ${layer.highlight ? 'text-synthrova-blue' : 'text-synthrova-white'}`}>
                 {layer.title}
               </div>
               <div className="md:w-2/3 text-synthrova-white/70 font-light mt-4 md:mt-0 leading-relaxed text-lg">

@@ -71,7 +71,7 @@ function WhatIsSection() {
         <h2 className="text-3xl md:text-5xl font-light tracking-tight mb-8">What is Synthrova?</h2>
         <div className="space-y-8 text-xl font-light text-synthrova-black/80 leading-relaxed">
           <p>
-            Synthrova Technologies is a technology company developing intelligent infrastructure, enterprise software and emerging technology systems for critical industries.
+            Synthrova builds intelligent infrastructure for critical systems and regulated industries.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
             <div className="p-8 border border-synthrova-lightgrey bg-synthrova-offwhite">
@@ -103,7 +103,7 @@ function FaqSection() {
     },
     {
       q: "What is Synthrova Technologies?",
-      a: "Synthrova Technologies is a technology company building intelligent infrastructure and software for critical systems."
+      a: "Synthrova builds intelligent infrastructure for critical systems and regulated industries."
     },
     {
       q: "What does Synthrova Technologies build?",
@@ -282,7 +282,7 @@ export function Company() {
     <div className="w-full selection:bg-synthrova-blue/30 selection:text-synthrova-black">
       <SEO 
         title="About Synthrova Technologies"
-        description="Synthrova Technologies is a technology company developing intelligent infrastructure, enterprise software and emerging technology systems for critical industries."
+        description="Synthrova builds intelligent infrastructure for critical systems and regulated industries."
         canonical="/company"
       />
 

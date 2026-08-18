@@ -10,7 +10,7 @@ const _dirname = process.cwd();
 
 async function startServer() {
   const app = express();
-  const PORT = process.env.PORT || 3000;
+  const PORT = 3000;
   const isProd = process.env.NODE_ENV === 'production';
 
   // 1. Basic Middleware (Observability, Security, Performance)
@@ -33,7 +33,13 @@ async function startServer() {
     const start = Date.now();
     res.on('finish', () => {
       const duration = Date.now() - start;
-      if (!req.url.includes('hmr') && !req.url.includes('.css') && !req.url.includes('.js')) {
+      if (
+        !req.url.includes('hmr') && 
+        !req.url.match(/\.(css|js|ts|tsx|json|ico|png|jpg|svg|woff2?)$/) &&
+        !req.url.startsWith('/@') &&
+        !req.url.startsWith('/src/') &&
+        !req.url.startsWith('/node_modules/')
+      ) {
         console.log(`[${new Date().toISOString()}] ${req.method} ${req.originalUrl} ${res.statusCode} - ${duration}ms`);
       }
     });

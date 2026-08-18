@@ -1,11 +1,15 @@
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { SEO } from "../components/SEO";
-import { useState } from "react";
 import { ArrowRight, ShieldCheck, ChevronDown } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
+
+
+const labelClass = "block text-sm font-medium text-synthrova-black/70 mb-2";
+const inputClass = "w-full bg-transparent border-b border-synthrova-lightgrey/30 px-0 py-3 text-synthrova-black focus:outline-none focus:border-synthrova-blue transition-colors";
 
 export function Contact() {
+
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { pathname } = useLocation();
@@ -45,9 +49,15 @@ export function Contact() {
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight mb-8 text-balance leading-tight">
               Let's build what comes next.
             </h1>
-            <p className="text-xl md:text-2xl font-light text-synthrova-black/70 max-w-md leading-relaxed text-balance">
+            <p className="text-xl md:text-2xl font-light text-synthrova-black/70 max-w-md leading-relaxed text-balance mb-12">
               Tell us about your organization, technology challenge, ecosystem or potential collaboration.
             </p>
+            <div className="flex flex-col gap-2">
+              <span className="text-sm font-mono tracking-widest uppercase text-synthrova-black/50">Direct Inquiries</span>
+              <a href="mailto:info.synthrova@gmail.com" className="text-lg md:text-xl font-medium hover:text-synthrova-blue transition-colors w-fit">
+                info.synthrova@gmail.com
+              </a>
+            </div>
           </div>
 
           {/* Subtle animated technical graphics */}

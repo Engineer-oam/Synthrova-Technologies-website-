@@ -115,7 +115,7 @@ function PositionsSection() {
             <p className="text-synthrova-black/70 font-light leading-relaxed mb-10">
               We are not actively recruiting for specific roles at this moment. However, we are always open to connecting with exceptional talent whose expertise aligns with our mission.
             </p>
-            <a href="mailto:careers@synthrova.com" className="inline-flex items-center px-8 py-4 bg-synthrova-black text-synthrova-white font-medium hover:bg-synthrova-blue transition-colors duration-500 group">
+            <a href="mailto:hr.synthrova@gmail.com" className="inline-flex items-center px-8 py-4 bg-synthrova-black text-synthrova-white font-medium hover:bg-synthrova-blue transition-colors duration-500 group">
               Send your profile
               <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
@@ -133,7 +133,7 @@ function FinalSection() {
         <h2 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight mb-16 text-balance leading-tight">
           The difficult problems are usually the interesting ones.
         </h2>
-        <a href="mailto:careers@synthrova.com" className="inline-flex items-center text-xl font-medium hover:opacity-70 transition-opacity group border-b-2 border-synthrova-lightgrey pb-1">
+        <a href="mailto:hr.synthrova@gmail.com" className="inline-flex items-center text-xl font-medium hover:opacity-70 transition-opacity group border-b-2 border-synthrova-lightgrey pb-1">
           Join Synthrova
           <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-2 transition-transform" />
         </a>

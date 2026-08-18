@@ -116,7 +116,7 @@ export function Home() {
     <div className="w-full bg-synthrova-white selection:bg-synthrova-blue/30 selection:text-synthrova-black">
       <SEO 
         title="Synthrova Technologies | Technology for Critical Systems"
-        description="Synthrova Technologies is a technology company building intelligent infrastructure and software for critical systems and regulated industries."
+        description="Synthrova builds intelligent infrastructure for critical systems and regulated industries."
         canonical="/"
         schema={{
           "@context": "https://schema.org",
@@ -124,7 +124,7 @@ export function Home() {
           "name": "Synthrova Technologies",
           "legalName": "Synthrova Technologies Private Limited",
           "url": "https://synthrova.com",
-          "description": "Technology company building intelligent infrastructure and software for critical systems and regulated industries.",
+          "description": "Synthrova builds intelligent infrastructure for critical systems and regulated industries.",
           "sameAs": [
             "https://www.linkedin.com/company/synthrova/",
             "https://x.com/Synthrova",
