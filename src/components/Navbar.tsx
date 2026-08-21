@@ -12,6 +12,7 @@ const navLinks = [
   { name: "Programs", path: "/programs" },
   { name: "Insights", path: "/insights" },
   { name: "Company", path: "/company" },
+  { name: "Leadership", path: "/leadership" },
   { name: "Careers", path: "/careers" },
 ];
 
@@ -47,6 +48,7 @@ export function Navbar() {
 
   
   const darkHeroRoutes = [
+    "/leadership",
     "/",
     "/technology",
     "/platform",
@@ -54,6 +56,7 @@ export function Navbar() {
     "/programs",
     "/careers",
     "/contact",
+    "/leadership",
     "/industries/pharmaceuticals"
   ];
   const isDarkBg = darkHeroRoutes.includes(location.pathname) && !scrolled;

@@ -27,6 +27,7 @@ export function Footer() {
             <li><Link to="/industries" className="hover:text-synthrova-white transition-colors">Industries</Link></li>
             <li><Link to="/programs" className="hover:text-synthrova-white transition-colors">Programs</Link></li>
             <li><Link to="/company" className="hover:text-synthrova-white transition-colors">Company</Link></li>
+            <li><Link to="/leadership" className="hover:text-synthrova-white transition-colors">Leadership</Link></li>
             <li><Link to="/insights" className="hover:text-synthrova-white transition-colors">Insights</Link></li>
             <li><Link to="/careers" className="hover:text-synthrova-white transition-colors">Careers</Link></li>
           </ul>
