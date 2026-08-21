@@ -9,9 +9,19 @@
     <meta property="og:description" content="An application built with Google AI Studio." />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
-  </head>
+  
+    <link rel="icon" type="image/png" href="/images/logo-dark.png" />
+    <link rel="preload" href="/images/logo-dark.png" as="image" type="image/png" />
+    <link rel="preload" href="/images/logo-transparent.png" as="image" type="image/png" />
+</head>
   <body>
-    <div id="root"></div>
+    
+    <!-- Preload for strict deployment environments -->
+    <div style="display: none;" aria-hidden="true">
+      <img src="/images/logo-dark.png" alt="preload" />
+      <img src="/images/logo-transparent.png" alt="preload" />
+    </div>
+<div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
