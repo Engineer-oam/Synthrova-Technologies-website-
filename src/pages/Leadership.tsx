@@ -130,7 +130,7 @@ export function Leadership() {
                   <motion.img 
                     whileHover={{ scale: 1.03 }}
                     transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                    src="/images/om-pandey.png"
+                    src="https://res.cloudinary.com/ocra7s5x/image/upload/v1787316113/file_00000000a188720ba3f1f12093b4c466.png"
                     alt="Om Pandey"
                     className="w-full h-full object-cover filter grayscale mix-blend-multiply"
                   />
@@ -256,7 +256,7 @@ export function Leadership() {
                     <motion.img 
                       whileHover={{ scale: 1.03 }}
                       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                      src="/images/om-pandey.png"
+                      src="https://res.cloudinary.com/ocra7s5x/image/upload/v1787316113/file_00000000a188720ba3f1f12093b4c466.png"
                       alt="Om Pandey"
                       className="w-full h-full object-cover filter grayscale mix-blend-multiply"
                     />
