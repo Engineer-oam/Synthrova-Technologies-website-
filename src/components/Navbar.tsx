@@ -1,4 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
+import { SynthrovaLogo } from "./Logo";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
@@ -44,22 +45,34 @@ export function Navbar() {
     };
   }, [isOpen]);
 
-  const isDarkBg = location.pathname === "/" && !scrolled;
+  
+  const darkHeroRoutes = [
+    "/",
+    "/technology",
+    "/platform",
+    "/ecosystem",
+    "/programs",
+    "/careers",
+    "/contact",
+    "/industries/pharmaceuticals"
+  ];
+  const isDarkBg = darkHeroRoutes.includes(location.pathname) && !scrolled;
+
 
   return (
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-40 transition-colors duration-300 ${
           scrolled
-            ? "bg-synthrova-white/90 backdrop-blur-md border-b border-synthrova-lightgrey/10 text-synthrova-black"
+            ? "bg-[#FFFFFF]/90 backdrop-blur-md border-b border-synthrova-lightgrey/20 text-synthrova-black"
             : isDarkBg
             ? "bg-transparent text-synthrova-white"
             : "bg-transparent text-synthrova-black"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8 h-20 md:h-24 flex items-center justify-between">
-          <Link to="/" className="flex items-center group shrink-0">
-            <span className="text-xl md:text-2xl font-light tracking-[0.2em] uppercase transition-opacity duration-300 group-hover:opacity-70">Synthrova</span>
+          <Link to="/" className="flex items-center group shrink-0" aria-label="Synthrova Technologies">
+            <SynthrovaLogo className="transition-opacity duration-300 group-hover:opacity-70" isDarkTheme={!scrolled && isDarkBg} />
           </Link>
 
           <button
@@ -85,8 +98,8 @@ export function Navbar() {
           >
             {/* Overlay Header */}
             <div className="flex-none px-6 lg:px-12 h-20 md:h-24 flex items-center justify-between w-full max-w-7xl mx-auto">
-              <Link to="/" className="flex items-center group shrink-0">
-                <span className="text-xl md:text-2xl font-light tracking-[0.2em] uppercase transition-opacity duration-300 group-hover:opacity-70">Synthrova</span>
+              <Link to="/" className="flex items-center group shrink-0" aria-label="Synthrova Technologies">
+                <SynthrovaLogo className="transition-opacity duration-300 group-hover:opacity-70" isDarkTheme={true} />
               </Link>
               <button
                 onClick={() => setIsOpen(false)}

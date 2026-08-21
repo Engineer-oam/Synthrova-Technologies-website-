@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { SynthrovaLogo } from "./Logo";
 
 export function Footer() {
   return (
@@ -7,7 +8,7 @@ export function Footer() {
         
         <div className="lg:col-span-2">
           <Link to="/" className="inline-block mb-6 group shrink-0">
-            <span className="text-xl md:text-2xl font-light tracking-[0.2em] uppercase transition-opacity duration-300 group-hover:opacity-70 text-synthrova-white">Synthrova</span>
+            <SynthrovaLogo className="transition-opacity duration-300 group-hover:opacity-70" isDarkTheme={true} />
           </Link>
           <p className="text-sm text-synthrova-lightgrey mb-6 max-w-sm text-balance">
             Technology for the systems that matter.
