@@ -3,8 +3,8 @@ interface LogoProps {
   isDarkTheme?: boolean;
 }
 
-import logoTransparent from "../assets/images/logo-transparent.png";
-import logoDark from "../assets/images/logo-dark.png";
+
+
 
 export function SynthrovaLogo({ className = "", isDarkTheme = false }: LogoProps) {
   return (
@@ -12,17 +12,19 @@ export function SynthrovaLogo({ className = "", isDarkTheme = false }: LogoProps
       <div className="relative shrink-0 flex items-center h-[41px] md:h-[48px] lg:h-[55px] -translate-y-[2px] md:-translate-y-[3px]">
         {/* Light Theme Logo (Transparent/Light Background variant) */}
         <img 
-          src={logoTransparent} 
+          src="/images/logo-transparent.png" 
           alt="" 
           className="h-full w-auto object-contain transition-opacity duration-300 ease-in-out motion-reduce:transition-none absolute left-0 top-0" 
           style={{ opacity: isDarkTheme ? 0 : 1 }}
+          onError={(e) => { e.currentTarget.style.display = "none"; }}
         />
         {/* Dark Theme Logo (Dark Background variant) */}
         <img 
-          src={logoDark} 
+          src="/images/logo-dark.png" 
           alt="Synthrova Technologies" 
           className="h-full w-auto object-contain transition-opacity duration-300 ease-in-out motion-reduce:transition-none relative z-10" 
           style={{ opacity: isDarkTheme ? 1 : 0 }}
+          onError={(e) => { e.currentTarget.style.display = "none"; }}
         />
       </div>
       
