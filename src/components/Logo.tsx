@@ -8,8 +8,8 @@ interface LogoProps {
 
 export function SynthrovaLogo({ className = "", isDarkTheme = false }: LogoProps) {
   return (
-    <div className={`flex items-center gap-[7px] md:gap-[8px] shrink-0 ${className}`}>
-      <div className="relative shrink-0 flex items-center h-[41px] md:h-[48px] lg:h-[55px] -translate-y-[2px] md:-translate-y-[3px]">
+    <div className={`flex items-center gap-[8px] md:gap-[10px] shrink-0 ${className}`}>
+      <div className="relative shrink-0 flex items-center justify-center h-[36px] md:h-[42px] lg:h-[48px]">
         {/* Light Theme Logo (For white background) */}
         <img 
           src="https://res.cloudinary.com/ocra7s5x/image/upload/v1787317143/1000269269.png" 

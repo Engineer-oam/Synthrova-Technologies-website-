@@ -252,14 +252,8 @@ function ContactForm() {
     const data = Object.fromEntries(formData.entries());
     
     try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      });
-      
-      if (!res.ok) throw new Error('Submission failed');
-      
+      // Simulate network request
+      await new Promise(resolve => setTimeout(resolve, 1500));
       setStatus("success");
     } catch (err) {
       setStatus("error");

@@ -19,6 +19,8 @@ const Industries = lazy(() => import("./pages/Industries").then(m => ({ default:
 const Technology = lazy(() => import("./pages/Technology").then(m => ({ default: m.Technology })));
 const Programs = lazy(() => import("./pages/Programs").then(m => ({ default: m.Programs })));
 const Insights = lazy(() => import("./pages/Insights").then(m => ({ default: m.Insights })));
+const Updates = lazy(() => import("./pages/Updates").then(m => ({ default: m.Updates })));
+const DesignPartnerUpdate = lazy(() => import("./pages/DesignPartnerUpdate").then(m => ({ default: m.DesignPartnerUpdate })));
 const Vision = lazy(() => import("./pages/Vision").then(m => ({ default: m.Vision })));
 const Careers = lazy(() => import("./pages/Careers").then(m => ({ default: m.Careers })));
 const Leadership = lazy(() => import("./pages/Leadership").then(m => ({ default: m.Leadership })));
@@ -52,6 +54,8 @@ export default function App() {
         <Route path="technology" element={<Suspense fallback={<LoadingFallback />}><Technology /></Suspense>} />
         <Route path="programs" element={<Suspense fallback={<LoadingFallback />}><Programs /></Suspense>} />
         <Route path="insights" element={<Suspense fallback={<LoadingFallback />}><Insights /></Suspense>} />
+        <Route path="updates" element={<Suspense fallback={<LoadingFallback />}><Updates /></Suspense>} />
+        <Route path="updates/design-partners-audit-ca" element={<Suspense fallback={<LoadingFallback />}><DesignPartnerUpdate /></Suspense>} />
         <Route path="vision" element={<Suspense fallback={<LoadingFallback />}><Vision /></Suspense>} />
         <Route path="careers" element={<Suspense fallback={<LoadingFallback />}><Careers /></Suspense>} />
         <Route path="company" element={<Suspense fallback={<LoadingFallback />}><Company /></Suspense>} />
