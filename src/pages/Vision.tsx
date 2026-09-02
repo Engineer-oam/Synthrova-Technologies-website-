@@ -26,6 +26,7 @@ export function Vision() {
         title="Vision | Synthrova Technologies"
         description="The boundaries between software, physical systems, data, and decision-making are disappearing. Read the Synthrova Technologies vision for the future."
         canonical="/vision"
+        schema={{ "@context": "https://schema.org", "@type": "WebPage", "name": "Vision | Synthrova Technologies", "description": "The boundaries between software, physical systems, data, and decision-making are disappearing. Read the Synthrova Technologies vision for the future.", "url": "https://synthrova.in/vision"         }}
       />
       
       

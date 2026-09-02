@@ -98,32 +98,28 @@ function WhatIsSection() {
 function FaqSection() {
   const faqs = [
     {
-      q: "What is B2G2B technology?",
-      a: "B2G2B (Business-to-Government-to-Business) technology refers to digital infrastructure that enables trusted data interoperability between regulatory agencies and private enterprises, streamlining compliance and reporting without compromising proprietary data."
-    },
-    {
       q: "What is Synthrova Technologies?",
-      a: "Synthrova builds intelligent infrastructure for critical systems and regulated industries."
+      a: "Synthrova Technologies is an enterprise technology company building compliance infrastructure for regulated supply chains. We develop digital systems that ensure continuous compliance, auditability, and traceability across complex organizational networks."
     },
     {
       q: "What does Synthrova Technologies build?",
-      a: "Synthrova builds platforms that connect data, organizations, and machines to improve compliance, security, and interoperability."
+      a: "Synthrova builds compliance infrastructure and digital platforms that connect data, organizations, and systems. Our primary product is E-Ledger, which provides structured transaction evidence and reconciliation for heavily regulated industries."
     },
     {
-      q: "What is E-Ledger?",
-      a: "E-Ledger is a compliance and supply chain infrastructure platform developed by Synthrova to create cryptographically verified records across organizations."
+      q: "What is Synthrova E-Ledger?",
+      a: "E-Ledger is compliance infrastructure developed by Synthrova for creating a structured and traceable transaction and compliance trail across regulated supply chains. It helps enterprises and audit firms work with better-organized evidence."
     },
     {
-      q: "Which industries does Synthrova serve?",
-      a: "Synthrova currently focuses on regulated supply chains such as pharmaceuticals, and is exploring applications in energy, defence, and industrial manufacturing."
+      q: "What problem does E-Ledger solve?",
+      a: "In regulated industries, transactions and compliance records are scattered across disconnected systems (like ERPs and WMS). E-Ledger provides a unified, cryptographically verified infrastructure layer that maintains a synchronized state of transactions across organizational boundaries, ensuring continuous auditability."
     },
     {
-      q: "Is Synthrova an Indian technology company?",
-      a: "Yes, Synthrova Technologies Private Limited is a registered Indian technology company recognized by DPIIT."
+      q: "Which industries does Synthrova target?",
+      a: "Synthrova focuses on regulated industries requiring strict compliance and traceability. We primarily target pharmaceutical supply chains, regulated manufacturing, and the audit and CA firms that verify these ecosystems."
     },
     {
-      q: "How can an enterprise work with Synthrova?",
-      a: "Organizations can collaborate with Synthrova for technology partnerships, research, pilot programs, or enterprise infrastructure deployment."
+      q: "How does Synthrova approach regulated supply chains?",
+      a: "Synthrova approaches regulated supply chains through continuous compliance. Instead of reconstructing evidence manually at audit time, our infrastructure ensures that evidence is continuously built, verified, and structurally organized during the year as transactions occur."
     }
   ];
 
@@ -281,9 +277,10 @@ export function Company() {
   return (
     <div className="w-full selection:bg-synthrova-blue/30 selection:text-synthrova-black">
       <SEO 
-        title="About Synthrova Technologies | Technology Infrastructure Company"
-        description="Synthrova builds intelligent infrastructure for critical systems and regulated industries."
+        title="Company | Synthrova Technologies"
+        description="Learn about Synthrova Technologies, an enterprise technology company building compliance infrastructure for regulated supply chains and audit firms."
         canonical="/company"
+        schema={{ "@context": "https://schema.org", "@type": "AboutPage", "name": "Company | Synthrova Technologies", "description": "Learn about Synthrova Technologies, an enterprise technology company building compliance infrastructure for regulated supply chains and audit firms.", "url": "https://synthrova.in/company", "mainEntity": {     "@type": "Organization",     "name": "Synthrova Technologies",     "url": "https://synthrova.in" }         }}
       />
 
       <HeroSection />

@@ -242,6 +242,7 @@ export function Ecosystem() {
         title="Ecosystem | Synthrova Technologies"
         description="Synthrova Technologies builds interoperable technology ecosystems that align incentives across complex, multi-stakeholder supply chains."
         canonical="/ecosystem"
+        schema={{ "@context": "https://schema.org", "@type": "WebPage", "name": "Ecosystem | Synthrova Technologies", "description": "Synthrova Technologies builds interoperable technology ecosystems that align incentives across complex, multi-stakeholder supply chains.", "url": "https://synthrova.in/ecosystem"         }}
       />
       
       <HeroNetworkSection />

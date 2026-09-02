@@ -384,9 +384,10 @@ export function Pharmaceuticals() {
   return (
     <div className="w-full selection:bg-synthrova-blue/30 selection:text-synthrova-black">
       <SEO 
-        title="Pharmaceutical Compliance Technology | Synthrova"
-        description="Synthrova Technologies provides E-Ledger infrastructure for the pharmaceutical industry to ensure traceability, provenance, and regulatory compliance."
-        canonical="/industries/pharmaceuticals"
+        title="Pharmaceutical Supply Chain Compliance | Synthrova Technologies"
+        description="Synthrova Technologies provides E-Ledger infrastructure for the pharmaceutical industry to ensure traceability, 3-way matching, and regulatory compliance."
+        canonical="/pharmaceuticals"
+        schema={{ "@context": "https://schema.org", "@type": "WebPage", "name": "Pharmaceutical Supply Chain Compliance | Synthrova Technologies", "description": "Synthrova Technologies provides E-Ledger infrastructure for the pharmaceutical industry to ensure traceability, 3-way matching, and regulatory compliance.", "url": "https://synthrova.in/pharmaceuticals"         }}
       />
       
       <HeroSection />

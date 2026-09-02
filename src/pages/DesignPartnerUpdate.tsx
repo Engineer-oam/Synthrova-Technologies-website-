@@ -16,29 +16,12 @@ export function DesignPartnerUpdate() {
     <div className="w-full selection:bg-synthrova-blue/30 selection:text-synthrova-white bg-[#0A0A0A] text-[#FFFFFF] min-h-screen font-light">
       <SEO 
         title="Calling Audit & CA Firms: Become an E-Ledger Design Partner | Synthrova"
-        description="Synthrova is opening a limited Design Partner cohort for audit and CA firms working with pharmaceutical and regulated manufacturing companies to help shape E-Ledger, compliance infrastructure for regulated supply chains."
+        description="Synthrova is opening a limited Design Partner cohort for audit and CA firms working with pharmaceutical and regulated manufacturing companies to help shape E-Ledger."
         canonical="/updates/design-partners-audit-ca"
+        schema={{ "@context": "https://schema.org", "@type": "NewsArticle", "headline": "Calling Audit & CA Firms: Become an E-Ledger Design Partner", "datePublished": "2026-08-23T00:00:00Z", "author": [{     "@type": "Organization",     "name": "Synthrova Technologies",     "url": "https://synthrova.in" }], "publisher": {     "@type": "Organization",     "name": "Synthrova Technologies" }, "description": "Synthrova is opening a limited Design Partner cohort for audit and CA firms working with pharmaceutical and regulated manufacturing companies to help shape E-Ledger, compliance infrastructure for regulated supply chains."         }}
       />
       
-      {/* JSON-LD Schema */}
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "NewsArticle",
-          "headline": "Calling Audit & CA Firms: Become an E-Ledger Design Partner",
-          "datePublished": "2026-08-23T00:00:00Z",
-          "author": [{
-            "@type": "Organization",
-            "name": "Synthrova Technologies",
-            "url": "https://synthrova.com"
-          }],
-          "publisher": {
-            "@type": "Organization",
-            "name": "Synthrova Technologies"
-          },
-          "description": "Synthrova is opening a limited Design Partner cohort for audit and CA firms working with pharmaceutical and regulated manufacturing companies to help shape E-Ledger, compliance infrastructure for regulated supply chains."
-        })}
-      </script>
+      
 
       <main className="max-w-4xl mx-auto px-6 lg:px-8 pt-32 pb-32">
         

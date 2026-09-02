@@ -188,9 +188,10 @@ export function Platform() {
   return (
     <div className="w-full bg-synthrova-white selection:bg-synthrova-blue/30 selection:text-synthrova-black">
       <SEO 
-        title="Platform | Synthrova Technologies"
+        title="Synthrova Platform | Intelligent Technology Infrastructure"
         description="Explore Synthrova's technology platforms across data infrastructure, artificial intelligence, and automated decision-making for regulated industries."
         canonical="/platform"
+        schema={{ "@context": "https://schema.org", "@type": "WebPage", "name": "Synthrova Platform | Intelligent Technology Infrastructure", "description": "Explore Synthrova\'s technology platforms across data infrastructure, artificial intelligence, and automated decision-making for regulated industries.", "url": "https://synthrova.in/platform"         }}
       />
       
       {/* HERO */}

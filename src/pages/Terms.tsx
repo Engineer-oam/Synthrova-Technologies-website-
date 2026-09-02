@@ -96,8 +96,9 @@ export function Terms() {
     <div className="w-full selection:bg-synthrova-blue/30 selection:text-synthrova-black bg-synthrova-offwhite">
       <SEO 
         title="Terms of Service | Synthrova Technologies"
-        description="The terms governing access to and use of Synthrova Technologies' public websites and information architectures."
+        description="Terms of Service for Synthrova Technologies. The rules governing the use of our websites and platforms."
         canonical="/terms"
+        schema={{ "@context": "https://schema.org", "@type": "WebPage", "name": "Terms of Service | Synthrova Technologies", "url": "https://synthrova.in/terms"         }}
       />
       
       {/* Hero */}

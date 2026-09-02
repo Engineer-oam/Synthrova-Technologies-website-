@@ -344,9 +344,10 @@ export function Updates() {
   return (
     <div className="w-full selection:bg-synthrova-blue/30 selection:text-synthrova-black bg-synthrova-white min-h-screen">
       <SEO 
-        title="Updates | Synthrova Technologies"
-        description="Research, analysis, and perspectives on technology, regulated industries, infrastructure, and emerging systems from Synthrova Technologies."
+        title="Updates & Announcements | Synthrova Technologies"
+        description="Latest updates, product announcements, and news from Synthrova Technologies."
         canonical="/updates"
+        schema={{ "@context": "https://schema.org", "@type": "WebPage", "name": "Updates & Announcements | Synthrova Technologies", "description": "Latest updates, product announcements, and news from Synthrova Technologies.", "url": "https://synthrova.in/updates"         }}
       />
       
       <HeroSection />

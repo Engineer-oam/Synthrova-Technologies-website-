@@ -73,8 +73,9 @@ export function Privacy() {
     <div className="w-full selection:bg-synthrova-blue/30 selection:text-synthrova-black bg-synthrova-offwhite">
       <SEO 
         title="Privacy Policy | Synthrova Technologies"
-        description="How Synthrova Technologies collects, uses, protects, and manages information across its enterprise platforms and public infrastructure."
+        description="Privacy Policy for Synthrova Technologies. How we collect, use, and protect your data."
         canonical="/privacy"
+        schema={{ "@context": "https://schema.org", "@type": "WebPage", "name": "Privacy Policy | Synthrova Technologies", "url": "https://synthrova.in/privacy"         }}
       />
       
       {/* Hero */}

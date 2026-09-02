@@ -259,9 +259,10 @@ export function Technology() {
   return (
     <div className="w-full selection:bg-synthrova-blue/30 selection:text-synthrova-black">
       <SEO 
-        title="Technology Infrastructure | Synthrova Technologies"
-        description="Synthrova develops technology across data integration, interoperability, distributed systems, artificial intelligence, and automated analytics."
+        title="Technology Architecture | Synthrova Technologies"
+        description="Explore the technology architecture behind Synthrova. We build secure, interoperable digital infrastructure for continuous compliance and automated analytics."
         canonical="/technology"
+        schema={{ "@context": "https://schema.org", "@type": "WebPage", "name": "Technology Architecture | Synthrova Technologies", "description": "Explore the technology architecture behind Synthrova. We build secure, interoperable digital infrastructure for continuous compliance and automated analytics.", "url": "https://synthrova.in/technology"         }}
       />
       
       <HeroSection />

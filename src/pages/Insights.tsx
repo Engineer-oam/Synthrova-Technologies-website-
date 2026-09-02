@@ -345,9 +345,10 @@ export function Insights() {
   return (
     <div className="w-full selection:bg-synthrova-blue/30 selection:text-synthrova-black bg-synthrova-white min-h-screen">
       <SEO 
-        title="Insights | Synthrova Technologies"
-        description="Research, analysis, and perspectives on technology, regulated industries, infrastructure, and emerging systems from Synthrova Technologies."
+        title="Insights & Analysis | Synthrova Technologies"
+        description="Read insights, analysis, and perspectives on technology, regulated industries, and compliance infrastructure from Synthrova Technologies."
         canonical="/insights"
+        schema={{ "@context": "https://schema.org", "@type": "WebPage", "name": "Insights & Analysis | Synthrova Technologies", "description": "Read insights, analysis, and perspectives on technology, regulated industries, and compliance infrastructure from Synthrova Technologies.", "url": "https://synthrova.in/insights"         }}
       />
       
       <HeroSection />

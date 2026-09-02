@@ -134,8 +134,9 @@ export function Security() {
     <div className="w-full selection:bg-synthrova-blue/30 selection:text-synthrova-black bg-synthrova-white">
       <SEO 
         title="Security | Synthrova Technologies"
-        description="Synthrova builds security into the architecture, infrastructure, and operational practices behind its technology."
+        description="Security practices and policies at Synthrova Technologies. How we secure mission-critical enterprise infrastructure."
         canonical="/security"
+        schema={{ "@context": "https://schema.org", "@type": "WebPage", "name": "Security | Synthrova Technologies", "url": "https://synthrova.in/security"         }}
       />
       
       {/* Hero Section */}

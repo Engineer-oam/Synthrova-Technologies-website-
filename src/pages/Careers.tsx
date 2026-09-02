@@ -155,8 +155,9 @@ export function Careers() {
     <div className="w-full selection:bg-synthrova-black selection:text-synthrova-blue bg-synthrova-white min-h-screen">
       <SEO 
         title="Careers | Synthrova Technologies"
-        description="Work with Synthrova Technologies on difficult engineering problems across infrastructure, intelligence, regulated industries, and emerging technology."
+        description="Join Synthrova Technologies to help build the future of compliance infrastructure for regulated supply chains and audit firms."
         canonical="/careers"
+        schema={{ "@context": "https://schema.org", "@type": "WebPage", "name": "Careers | Synthrova Technologies", "description": "Join Synthrova Technologies to help build the future of compliance infrastructure for regulated supply chains and audit firms.", "url": "https://synthrova.in/careers"         }}
       />
       
       <HeroSection />

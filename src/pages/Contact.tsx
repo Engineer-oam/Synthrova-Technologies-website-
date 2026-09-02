@@ -37,8 +37,9 @@ export function Contact() {
     <div className="flex flex-col lg:flex-row min-h-screen w-full selection:bg-synthrova-blue/30 selection:text-synthrova-black bg-synthrova-white">
       <SEO 
         title="Contact Synthrova Technologies"
-        description="Contact Synthrova Technologies to discuss technology partnerships, infrastructure projects, research, and enterprise pilots."
+        description="Contact Synthrova Technologies to discuss E-Ledger, compliance infrastructure, design partnerships, or enterprise technology pilots."
         canonical="/contact"
+        schema={{ "@context": "https://schema.org", "@type": "ContactPage", "name": "Contact Synthrova Technologies", "description": "Contact Synthrova Technologies to discuss E-Ledger, compliance infrastructure, design partnerships, or enterprise technology pilots.", "url": "https://synthrova.in/contact"         }}
       />
       
       {/* LEFT: Dark Background (Sticky on desktop) */}

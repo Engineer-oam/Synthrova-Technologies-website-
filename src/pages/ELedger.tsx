@@ -9,31 +9,10 @@ export function ELedger() {
   return (
     <div className="w-full bg-synthrova-white selection:bg-synthrova-blue/30 selection:text-synthrova-black">
       <SEO 
-        title="E-Ledger | Compliance Infrastructure for Regulated Supply Chains"
-        description="E-Ledger is Synthrova Technologies' compliance infrastructure platform for regulated supply chains, enabling shared transaction records, reconciliation, traceability and audit readiness."
+        title="E-Ledger | Compliance Infrastructure by Synthrova Technologies"
+        description="E-Ledger is compliance infrastructure for regulated supply chains. It creates a structured, traceable transaction and compliance trail for audit and reconciliation."
         canonical="/eledger"
-        schema={[
-          {
-            "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            "name": "E-Ledger",
-            "operatingSystem": "Web",
-            "applicationCategory": "BusinessApplication",
-            "provider": {
-              "@type": "Organization",
-              "name": "Synthrova Technologies Private Limited",
-              "url": "https://synthrova.in/"
-            },
-            "description": "E-Ledger is Synthrova Technologies' compliance infrastructure platform for regulated supply chains, enabling shared transaction records, reconciliation, traceability and audit readiness."
-          },
-          {
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "Synthrova Technologies Private Limited",
-            "url": "https://synthrova.in/",
-            "logo": "https://synthrova.in/logo.png"
-          }
-        ]}
+        schema={{ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Synthrova E-Ledger", "applicationCategory": "BusinessApplication", "description": "E-Ledger is compliance infrastructure for regulated supply chains. It creates a structured, traceable transaction and compliance trail for audit and reconciliation.", "operatingSystem": "Web", "provider": {     "@type": "Organization",     "name": "Synthrova Technologies",     "url": "https://synthrova.in" }         }}
       />
 
       <HeroSection />
@@ -46,6 +25,7 @@ export function ELedger() {
       <ArchitectureSection />
       <SecuritySection />
       <FutureSection />
+      <FAQSection />
       <FinalCTASection />
     </div>
   );
@@ -467,6 +447,48 @@ function FutureSection() {
           <span className="text-synthrova-blue font-bold px-2 py-1">Risk</span>
           <ArrowRight className="w-4 h-4 text-synthrova-blue" />
           <span className="text-synthrova-blue font-bold bg-synthrova-blue/10 px-4 py-2 border border-synthrova-blue/30">Decision</span>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+
+function FAQSection() {
+  const faqs = [
+    {
+      q: "What is Synthrova E-Ledger?",
+      a: "E-Ledger is compliance infrastructure developed by Synthrova Technologies for creating a structured and traceable transaction and compliance trail across regulated supply chains."
+    },
+    {
+      q: "What problem does E-Ledger solve?",
+      a: "In regulated industries like pharmaceuticals, transactions and compliance records are scattered across disconnected systems (ERPs, WMS). E-Ledger provides a unified, cryptographically verified infrastructure layer that maintains a synchronized state of transactions across organizational boundaries, eliminating reconciliation disputes and ensuring continuous auditability."
+    },
+    {
+      q: "Is E-Ledger an ERP?",
+      a: "No. E-Ledger is not an ERP (Enterprise Resource Planning) system. It is designed to sit alongside your existing enterprise systems (ERP, WMS, Procurement, Laboratory), acting as an independent, shared compliance and transaction layer that verifies and records state changes across multiple stakeholders."
+    },
+    {
+      q: "Who uses E-Ledger?",
+      a: "E-Ledger is designed for enterprises in regulated manufacturing and supply chains (such as Pharmaceuticals), as well as the audit and CA firms, regulators, and supply chain partners that interact with them to ensure continuous compliance and traceability."
+    },
+    {
+      q: "How does E-Ledger support auditability?",
+      a: "By ensuring every state change is cryptographically signed by its originator, E-Ledger builds an immutable history of all events. This means compliance and audit look like continuous evidence built during the year, instead of reconstructed manually at audit time."
+    }
+  ];
+
+  return (
+    <section className="py-32 bg-synthrova-white text-synthrova-black border-t border-synthrova-lightgrey/10">
+      <div className="max-w-4xl mx-auto px-6 lg:px-8">
+        <h2 className="text-3xl md:text-5xl font-light mb-16 tracking-tight">Frequently Asked Questions</h2>
+        <div className="space-y-12">
+          {faqs.map((faq, i) => (
+            <div key={i} className="border-l-2 border-synthrova-blue pl-6">
+              <h3 className="text-xl md:text-2xl font-light mb-4">{faq.q}</h3>
+              <p className="text-synthrova-black/70 text-lg leading-relaxed font-light">{faq.a}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

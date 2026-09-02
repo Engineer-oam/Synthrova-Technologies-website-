@@ -158,9 +158,10 @@ export function Industries() {
   return (
     <div className="w-full selection:bg-synthrova-blue/30 selection:text-synthrova-black">
       <SEO 
-        title="Industries | Synthrova Technologies"
-        description="Synthrova Technologies serves critical industries including Pharmaceuticals, Energy, Defence & Security, and Government supply chains."
+        title="Industries We Serve | Synthrova Technologies"
+        description="Synthrova Technologies serves regulated industries including Pharmaceuticals and Regulated Manufacturing, providing infrastructure for supply chain compliance."
         canonical="/industries"
+        schema={{ "@context": "https://schema.org", "@type": "WebPage", "name": "Industries We Serve | Synthrova Technologies", "description": "Synthrova Technologies serves regulated industries including Pharmaceuticals and Regulated Manufacturing, providing infrastructure for supply chain compliance.", "url": "https://synthrova.in/industries"         }}
       />
       
       <HeroSection />

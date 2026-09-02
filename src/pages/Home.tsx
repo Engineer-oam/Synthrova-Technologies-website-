@@ -4,6 +4,44 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { SEO } from "../components/SEO";
 
+
+function FAQSection() {
+  const faqs = [
+    {
+      q: "What is Synthrova Technologies?",
+      a: "Synthrova Technologies is an enterprise technology company building compliance infrastructure for regulated industries, focusing on auditability, secure systems, and intelligent supply chains."
+    },
+    {
+      q: "What does Synthrova do?",
+      a: "We build deep technology across regulated industries and emerging strategic domains. We deploy intelligent enterprise infrastructure—like our E-Ledger platform—where precision, security, and interoperability are critical."
+    },
+    {
+      q: "What is Synthrova E-Ledger?",
+      a: "E-Ledger is our flagship compliance infrastructure platform. It creates a structured, traceable transaction and compliance trail across regulated supply chains, streamlining reconciliation and audit processes."
+    },
+    {
+      q: "What industries does Synthrova target?",
+      a: "Synthrova primarily targets regulated supply chains such as pharmaceuticals, government, excise & controlled goods, and regulated manufacturing, as well as the audit and CA firms supporting these sectors."
+    }
+  ];
+
+  return (
+    <section className="py-32 bg-synthrova-offwhite text-synthrova-black border-y border-synthrova-lightgrey/10">
+      <div className="max-w-4xl mx-auto px-6 lg:px-8">
+        <h2 className="text-3xl md:text-5xl font-light mb-16 tracking-tight">Frequently Asked Questions</h2>
+        <div className="space-y-12">
+          {faqs.map((faq, i) => (
+            <div key={i} className="border-l-2 border-synthrova-blue pl-6">
+              <h3 className="text-xl md:text-2xl font-light mb-4">{faq.q}</h3>
+              <p className="text-synthrova-black/70 text-lg leading-relaxed font-light">{faq.a}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function HeroVisualization() {
   const [step, setStep] = useState(0);
 
@@ -115,31 +153,10 @@ export function Home() {
   return (
     <div className="w-full bg-synthrova-white selection:bg-synthrova-blue/30 selection:text-synthrova-black">
       <SEO 
-        title="Synthrova Technologies | Compliance Infrastructure for Regulated Industries"
-        description="Synthrova Technologies builds compliance infrastructure and technology platforms for regulated industries, starting with E-Ledger for pharmaceutical supply chains, reconciliation, traceability and audit readiness."
+        title="Synthrova Technologies | Enterprise Compliance Infrastructure"
+        description="Synthrova Technologies builds compliance infrastructure for regulated supply chains. Explore E-Ledger, our platform for structured transaction evidence and auditability."
         canonical="/"
-        schema={[
-          {
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "Synthrova Technologies Private Limited",
-            "url": "https://synthrova.in/",
-            "logo": "https://synthrova.in/logo.png",
-            "description": "Synthrova Technologies is a technology company building compliance infrastructure and technology platforms for regulated industries.",
-            "sameAs": [
-              "https://www.linkedin.com/company/synthrova/",
-              "https://x.com/Synthrova",
-              "https://www.instagram.com/synthrova?igsh=MTVheXA5NmRydWdjcw=="
-            ]
-          },
-          {
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "name": "Synthrova Technologies",
-            "alternateName": "Synthrova",
-            "url": "https://synthrova.in/"
-          }
-        ]}
+        schema={{ "@context": "https://schema.org", "@type": "Organization", "name": "Synthrova Technologies", "legalName": "Synthrova Technologies India", "url": "https://synthrova.in", "logo": "https://synthrova.in/images/logo-dark.png", "description": "Synthrova Technologies builds compliance infrastructure for regulated supply chains, specializing in auditability, traceability, and structured transaction evidence.", "contactPoint": {     "@type": "ContactPoint",     "email": "info.synthrova@gmail.com",     "contactType": "customer service" }         }}
       />
       {/* SECTION 1: HERO */}
       <section className="relative min-h-screen bg-synthrova-black text-synthrova-white pt-32 pb-24 flex flex-col justify-center">
@@ -358,6 +375,8 @@ export function Home() {
           </div>
         </div>
       </section>
+
+      <FAQSection />
 
       {/* SECTION 10: FINAL CTA */}
       <section className="py-32 bg-synthrova-black text-synthrova-white">
