@@ -4,6 +4,27 @@ import { ArrowRight } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
+function generateMailtoLink(roleTitle: string, isInternship: boolean = false): string {
+  let displayTitle = roleTitle;
+  if (roleTitle === "Software Engineering Intern") displayTitle = "Software Engineering Internship";
+  if (roleTitle === "AI Engineering Intern") displayTitle = "AI Engineering Internship";
+  if (roleTitle === "Product & Research Intern") displayTitle = "Product & Research Internship";
+  if (roleTitle === "UI/UX Design Intern") displayTitle = "UI/UX Design Internship";
+
+  const subject = `Application — ${displayTitle}`;
+  const body = `Dear Synthrova Technologies HR Team,
+
+I am writing to apply for the ${displayTitle} opportunity at Synthrova Technologies.
+
+Please find my CV/resume attached for your consideration.
+
+Regards,
+[Your Name]`;
+
+  return `mailto:hr.synthrova@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
+
 function HeroSection() {
   return (
     <section className="relative min-h-[80vh] bg-synthrova-black text-synthrova-white pt-32 pb-24 flex flex-col justify-center overflow-hidden">
@@ -208,9 +229,9 @@ function OpenRolesSection() {
                 </div>
               </div>
               
-              <Link to="/contact" className="inline-flex items-center text-sm font-medium uppercase tracking-widest hover:text-synthrova-blue transition-colors group mt-auto">
+              <a href={generateMailtoLink(role.title)} className="inline-flex items-center text-sm font-medium uppercase tracking-widest hover:text-synthrova-blue transition-colors group mt-auto">
                 Apply <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
+              </a>
             </motion.div>
           ))}
         </div>
@@ -263,13 +284,16 @@ function InternshipsSection() {
                 <span>{intern.location}</span>
                 <span>{intern.duration}</span>
               </div>
-              <div className="flex flex-wrap gap-2 mt-auto">
+              <div className="flex flex-wrap gap-2 mb-8">
                 {intern.skills.map((skill, j) => (
                   <span key={j} className="text-xs text-synthrova-white/60 border border-synthrova-white/10 px-2 py-1">
                     {skill}
                   </span>
                 ))}
               </div>
+              <a href={generateMailtoLink(intern.title, true)} className="mt-auto inline-flex items-center text-sm font-medium uppercase tracking-widest text-synthrova-white/70 hover:text-synthrova-blue transition-colors group">
+                Apply <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </a>
             </div>
           ))}
         </div>
