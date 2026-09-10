@@ -128,14 +128,14 @@ export function DesignPartnerUpdate() {
               <div className="bg-[#FFFFFF]/5 border border-[#FFFFFF]/10 p-10 md:p-16 text-center rounded-sm">
                 <h3 className="text-3xl font-light mb-8 text-[#FFFFFF]">Interested in becoming a Design Partner?</h3>
                 <a 
-                  href="mailto:info.synthrova@gmail.com"
+                  href="mailto:info@synthrova.in"
                   className="inline-flex items-center justify-center px-8 py-4 bg-[#FFFFFF] text-[#0A0A0A] font-medium hover:bg-[#168FEA] hover:text-[#FFFFFF] transition-colors duration-300 group"
                 >
                   Contact Synthrova
                   <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
                 <p className="mt-8 font-mono text-sm tracking-widest text-[#E7E7E4]/60 uppercase">
-                  info.synthrova@gmail.com
+                  info@synthrova.in
                 </p>
               </div>
             </section>

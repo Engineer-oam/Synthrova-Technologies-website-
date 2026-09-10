@@ -156,7 +156,7 @@ export function Home() {
         title="Synthrova Technologies | Enterprise Compliance Infrastructure"
         description="Synthrova Technologies builds compliance infrastructure for regulated supply chains. Explore E-Ledger, our platform for structured transaction evidence and auditability."
         canonical="/"
-        schema={{ "@context": "https://schema.org", "@type": "Organization", "name": "Synthrova Technologies", "legalName": "Synthrova Technologies India", "url": "https://synthrova.in", "logo": "https://synthrova.in/images/logo-dark.png", "description": "Synthrova Technologies builds compliance infrastructure for regulated supply chains, specializing in auditability, traceability, and structured transaction evidence.", "contactPoint": {     "@type": "ContactPoint",     "email": "info.synthrova@gmail.com",     "contactType": "customer service" }         }}
+        schema={{ "@context": "https://schema.org", "@type": "Organization", "name": "Synthrova Technologies", "legalName": "Synthrova Technologies India", "url": "https://synthrova.in", "logo": "https://synthrova.in/images/logo-dark.png", "description": "Synthrova Technologies builds compliance infrastructure for regulated supply chains, specializing in auditability, traceability, and structured transaction evidence.", "contactPoint": {     "@type": "ContactPoint",     "email": "info@synthrova.in",     "contactType": "customer service" }         }}
       />
       {/* SECTION 1: HERO */}
       <section className="relative min-h-screen bg-synthrova-black text-synthrova-white pt-32 pb-24 flex flex-col justify-center">

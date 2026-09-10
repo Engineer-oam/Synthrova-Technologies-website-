@@ -21,7 +21,7 @@ Please find my CV/resume attached for your consideration.
 Regards,
 [Your Name]`;
 
-  return `mailto:hr.synthrova@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  return `mailto:careers@synthrova.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
 

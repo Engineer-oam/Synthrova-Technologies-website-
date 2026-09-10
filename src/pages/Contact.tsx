@@ -55,8 +55,8 @@ export function Contact() {
             </p>
             <div className="flex flex-col gap-2">
               <span className="text-sm font-mono tracking-widest uppercase text-synthrova-white/50">Direct Inquiries</span>
-              <a href="mailto:info.synthrova@gmail.com" className="text-lg md:text-xl font-medium hover:text-synthrova-blue transition-colors w-fit">
-                info.synthrova@gmail.com
+              <a href="mailto:info@synthrova.in" className="text-lg md:text-xl font-medium hover:text-synthrova-blue transition-colors w-fit">
+                info@synthrova.in
               </a>
             </div>
           </div>
