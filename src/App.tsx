@@ -29,6 +29,7 @@ const Privacy = lazy(() => import("./pages/Privacy").then(m => ({ default: m.Pri
 const Terms = lazy(() => import("./pages/Terms").then(m => ({ default: m.Terms })));
 const Security = lazy(() => import("./pages/Security").then(m => ({ default: m.Security })));
 const Contact = lazy(() => import("./pages/Contact").then(m => ({ default: m.Contact })));
+const NotFound = lazy(() => import("./pages/NotFound").then(m => ({ default: m.NotFound })));
 
 function LoadingFallback() {
   return (
@@ -64,6 +65,7 @@ export default function App() {
         <Route path="terms" element={<Suspense fallback={<LoadingFallback />}><Terms /></Suspense>} />
         <Route path="security" element={<Suspense fallback={<LoadingFallback />}><Security /></Suspense>} />
         <Route path="contact" element={<Suspense fallback={<LoadingFallback />}><Contact /></Suspense>} />
+        <Route path="*" element={<Suspense fallback={<LoadingFallback />}><NotFound /></Suspense>} />
       </Route>    
     </Routes>
   );

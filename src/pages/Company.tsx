@@ -280,7 +280,66 @@ export function Company() {
         title="Company | Synthrova Technologies"
         description="Learn about Synthrova Technologies, an enterprise technology company building compliance infrastructure for regulated supply chains and audit firms."
         canonical="/company"
-        schema={{ "@context": "https://schema.org", "@type": "AboutPage", "name": "Company | Synthrova Technologies", "description": "Learn about Synthrova Technologies, an enterprise technology company building compliance infrastructure for regulated supply chains and audit firms.", "url": "https://synthrova.in/company", "mainEntity": {     "@type": "Organization",     "name": "Synthrova Technologies",     "url": "https://synthrova.in" }         }}
+        schema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            "name": "Company | Synthrova Technologies",
+            "description": "Learn about Synthrova Technologies, an enterprise technology company building compliance infrastructure for regulated supply chains and audit firms.",
+            "url": "https://synthrova.in/company",
+            "mainEntity": {
+              "@type": "Organization",
+              "name": "Synthrova Technologies",
+              "url": "https://synthrova.in"
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is Synthrova Technologies?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Synthrova Technologies is a deep-technology company building enterprise infrastructure for regulated industries. We focus on continuous compliance, transaction verification, and intelligent systems for supply chains and manufacturing."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What does Synthrova Technologies do?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Synthrova develops compliance infrastructure like E-Ledger. We build the architectural foundations that allow enterprises to operate securely, ensuring transactions are fully traceable and operations remain continuously compliant with strict regulatory standards."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is Synthrova E-Ledger?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "E-Ledger is our flagship initiative. It is compliance infrastructure designed for regulated supply chains to connect transactions, reconciliation, and traceability across complex enterprise ecosystems."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Which industries does Synthrova target?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Synthrova focuses on regulated industries requiring strict compliance and traceability. We primarily target pharmaceutical supply chains, regulated manufacturing, and the audit and CA firms that verify these ecosystems."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How does Synthrova approach regulated supply chains?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Synthrova approaches regulated supply chains through continuous compliance. Instead of reconstructing evidence manually at audit time, our infrastructure ensures that evidence is continuously built, verified, and structurally organized during the year as transactions occur."
+                }
+              }
+            ]
+          }
+        ]}
       />
 
       <HeroSection />

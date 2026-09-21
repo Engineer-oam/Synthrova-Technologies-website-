@@ -12,7 +12,67 @@ export function ELedger() {
         title="E-Ledger | Compliance Infrastructure by Synthrova Technologies"
         description="E-Ledger is compliance infrastructure for regulated supply chains. It creates a structured, traceable transaction and compliance trail for audit and reconciliation."
         canonical="/eledger"
-        schema={{ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Synthrova E-Ledger", "applicationCategory": "BusinessApplication", "description": "E-Ledger is compliance infrastructure for regulated supply chains. It creates a structured, traceable transaction and compliance trail for audit and reconciliation.", "operatingSystem": "Web", "provider": {     "@type": "Organization",     "name": "Synthrova Technologies",     "url": "https://synthrova.in" }         }}
+        schema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Synthrova E-Ledger",
+            "applicationCategory": "BusinessApplication",
+            "description": "E-Ledger is compliance infrastructure for regulated supply chains. It creates a structured, traceable transaction and compliance trail for audit and reconciliation.",
+            "operatingSystem": "Web",
+            "provider": {
+              "@type": "Organization",
+              "name": "Synthrova Technologies",
+              "url": "https://synthrova.in"
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is Synthrova E-Ledger?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "E-Ledger is compliance infrastructure developed by Synthrova Technologies for creating a structured and traceable transaction and compliance trail across regulated supply chains."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What problem does E-Ledger solve?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "In regulated industries like pharmaceuticals, transactions and compliance records are scattered across disconnected systems (ERPs, WMS). E-Ledger provides a unified, cryptographically verified infrastructure layer that maintains a synchronized state of transactions across organizational boundaries, eliminating reconciliation disputes and ensuring continuous auditability."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is E-Ledger an ERP?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. E-Ledger is not an ERP (Enterprise Resource Planning) system. It is designed to sit alongside your existing enterprise systems (ERP, WMS, Procurement, Laboratory), acting as an independent, shared compliance and transaction layer that verifies and records state changes across multiple stakeholders."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Who uses E-Ledger?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "E-Ledger is designed for enterprises in regulated manufacturing and supply chains (such as Pharmaceuticals), as well as the audit and CA firms, regulators, and supply chain partners that interact with them to ensure continuous compliance and traceability."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How does E-Ledger support auditability?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "By ensuring every state change is cryptographically signed by its originator, E-Ledger builds an immutable history of all events. This means compliance and audit look like continuous evidence built during the year, instead of reconstructed manually at audit time."
+                }
+              }
+            ]
+          }
+        ]}
       />
 
       <HeroSection />
