@@ -59,6 +59,7 @@ export default function App() {
         <Route path="updates/design-partners-audit-ca" element={<Suspense fallback={<LoadingFallback />}><DesignPartnerUpdate /></Suspense>} />
         <Route path="vision" element={<Suspense fallback={<LoadingFallback />}><Vision /></Suspense>} />
         <Route path="careers" element={<Suspense fallback={<LoadingFallback />}><Careers /></Suspense>} />
+        <Route path="careers/:roleSlug" element={<Suspense fallback={<LoadingFallback />}><Careers /></Suspense>} />
         <Route path="company" element={<Suspense fallback={<LoadingFallback />}><Company /></Suspense>} />
         <Route path="leadership" element={<Suspense fallback={<LoadingFallback />}><Leadership /></Suspense>} />
         <Route path="privacy" element={<Suspense fallback={<LoadingFallback />}><Privacy /></Suspense>} />

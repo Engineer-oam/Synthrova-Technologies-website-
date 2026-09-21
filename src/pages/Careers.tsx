@@ -1,14 +1,19 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { SEO } from "../components/SEO";
-import { ArrowRight, ChevronDown, ChevronUp, Check, Mail, Compass, Layers, ShieldCheck, Cpu } from "lucide-react";
-import { useLocation } from "react-router-dom";
+import { CooExecutiveRoleDetail } from "../components/CooExecutiveRoleDetail";
+import { ShareOpportunity } from "../components/ShareOpportunity";
+import { ArrowRight, ChevronDown, ChevronUp, Check, Mail, Compass, Layers, ShieldCheck, Cpu, Building2, GitPullRequest, Network, Users } from "lucide-react";
+import { useLocation, useParams } from "react-router-dom";
 
 interface SeniorRole {
   number: string;
+  slug: string;
   title: string;
   roleType: string;
   primaryObjective: string;
+  seoDescription: string;
+  shareDescription?: string;
   minQualifications: string[];
   prefQualifications: string[];
   eligibility: string[];
@@ -21,9 +26,49 @@ interface SeniorRole {
 const SENIOR_ROLES: SeniorRole[] = [
   {
     number: "01",
+    slug: "coo-president-pharma",
+    title: "Chief Operating Officer / President — Pharma Industry & Strategic Partnerships",
+    roleType: "EXECUTIVE LEADERSHIP",
+    primaryObjective: "Build the market for E-Ledger across the pharmaceutical ecosystem: PoC → Design Partners → Enterprise Pilots.",
+    seoDescription: "Synthrova Technologies is looking for a senior pharmaceutical industry executive to help develop industry relationships, design partnerships, enterprise pilots and strategic partnerships for E-Ledger.",
+    shareDescription: "Synthrova Technologies is looking for a senior pharmaceutical industry executive to help build the market for E-Ledger.",
+    minQualifications: [
+      "15+ years of professional experience in the pharmaceutical, life-sciences, healthcare supply-chain, or closely related regulated industry.",
+      "Significant experience in a senior leadership position such as VP / SVP, Head of Supply Chain, Head of Operations, Head of Commercial Operations, COO, Business Unit Head, Digital Transformation Head, Serialization / Track & Trace Head, or equivalent.",
+      "Deep understanding of pharmaceutical supply chains and multi-organization workflows.",
+      "Experience working across multiple organizations rather than exclusively within a single internal function.",
+      "Demonstrated experience leading large-scale cross-functional or cross-organizational initiatives.",
+      "Strong understanding of pharmaceutical quality, compliance, distribution, traceability or regulatory workflows.",
+      "Demonstrated ability to engage C-suite and senior pharmaceutical executives.",
+      "Strong strategic partnership and enterprise business-development capability.",
+      "Excellent communication and negotiation skills."
+    ],
+    prefQualifications: [
+      "Experience with DSCSA, Serialization, Track & Trace, GS1 standards, QR / barcode systems.",
+      "Deep knowledge of Pharmaceutical ERP environments, SAP, WMS, QMS, GMP / GxP.",
+      "Experience in supply-chain digitization, data interoperability and digital transformation.",
+      "Experience in pharmaceutical distribution, contract manufacturing, hospital procurement or reconciliation.",
+      "Demonstrated experience interacting with Indian regulatory and industry institutions (CDSCO, MoHFW, DoP, State authorities, C-DAC, GS1 India)."
+    ],
+    eligibility: [
+      "Must be prepared to lead market creation and live design partner acquisition rather than traditional corporate maintenance.",
+      "Comfortable operating across both high-level executive strategy and granular supply-chain workflow translation.",
+      "India-based or hybrid with regular on-site presence.",
+      "Competitive executive compensation with meaningful equity participation structured according to experience."
+    ],
+    engagement: "Full-time Executive Leadership | India (Hybrid / On-site) | Reporting to Founder & CEO",
+    applyButtonText: "Apply for COO / President →",
+    emailSubject: "Application — COO / President, Pharma Industry & Strategic Partnerships",
+    isAdvisor: false
+  },
+  {
+    number: "02",
+    slug: "cto-technical-co-founder",
     title: "CTO / Technical Co-Founder",
     roleType: "FOUNDING LEADERSHIP",
     primaryObjective: "Own the technical direction from PoC → MVP → production.",
+    seoDescription: "Synthrova Technologies is seeking a CTO / Technical Co-Founder to own technical direction from PoC through MVP and production for E-Ledger in regulated supply chains.",
+    shareDescription: "Synthrova Technologies is looking for a technical co-founder to lead engineering and architecture for E-Ledger.",
     minQualifications: [
       "Bachelor's or Master's degree in Computer Science, Software Engineering, Information Technology, or a closely related technical field.",
       "8+ years of professional technology experience, with significant experience in architecture or technical leadership.",
@@ -52,10 +97,13 @@ const SENIOR_ROLES: SeniorRole[] = [
     isAdvisor: false
   },
   {
-    number: "02",
+    number: "03",
+    slug: "founding-gtm-enterprise-business-development",
     title: "Founding GTM & Enterprise Business Development Lead",
     roleType: "FOUNDING COMMERCIAL LEADERSHIP",
     primaryObjective: "PoC → Design Partners → Pilots → First Paying Customers",
+    seoDescription: "Synthrova Technologies is hiring a Founding GTM & Enterprise Business Development Lead to drive customer acquisition from PoC to design partners and enterprise pilots.",
+    shareDescription: "Synthrova Technologies is looking for an enterprise GTM leader to secure design partners and pilots for E-Ledger.",
     minQualifications: [
       "Bachelor's degree in Business, Management, Engineering, Pharmacy, Life Sciences or related field.",
       "5+ years of B2B enterprise sales, business development, GTM or strategic partnerships experience.",
@@ -82,10 +130,13 @@ const SENIOR_ROLES: SeniorRole[] = [
     isAdvisor: false
   },
   {
-    number: "03",
+    number: "04",
+    slug: "strategic-gtm-enterprise-partnerships-advisor",
     title: "Strategic GTM & Enterprise Partnerships Advisor",
     roleType: "STRATEGIC ADVISORY",
     primaryObjective: "Help Synthrova move from PoC → Design Partners → Enterprise Pilots through strategic guidance and qualified access.",
+    seoDescription: "Synthrova Technologies is seeking a Strategic GTM & Enterprise Partnerships Advisor to provide executive guidance and qualified access for E-Ledger.",
+    shareDescription: "Synthrova Technologies is seeking a strategic advisor to guide enterprise partnerships and pilot adoption.",
     minQualifications: [
       "10+ years of experience in enterprise technology, consulting, pharma, supply chain, compliance, enterprise sales or strategic partnerships.",
       "Demonstrated senior-level experience working with enterprise decision-makers.",
@@ -111,10 +162,13 @@ const SENIOR_ROLES: SeniorRole[] = [
     isAdvisor: true
   },
   {
-    number: "04",
+    number: "05",
+    slug: "pharma-qa-gxp-compliance-advisor",
     title: "Pharma QA / GxP / Compliance Advisor",
     roleType: "DOMAIN ADVISORY",
     primaryObjective: "Validate real pharmaceutical quality, compliance and regulatory workflows for E-Ledger.",
+    seoDescription: "Synthrova Technologies is seeking a Pharma QA / GxP / Compliance Advisor to validate real pharmaceutical quality, compliance and regulatory workflows for E-Ledger.",
+    shareDescription: "Synthrova Technologies is seeking a pharmaceutical QA/GxP advisor to validate compliance workflows for E-Ledger.",
     minQualifications: [
       "Bachelor's or Master's degree in Pharmacy, Life Sciences, Chemistry, Biotechnology or related discipline.",
       "8+ years of pharmaceutical quality, compliance or regulatory experience.",
@@ -139,10 +193,13 @@ const SENIOR_ROLES: SeniorRole[] = [
     isAdvisor: true
   },
   {
-    number: "05",
+    number: "06",
+    slug: "pharmaceutical-supply-chain-procurement-advisor",
     title: "Pharmaceutical Supply Chain & Procurement Advisor",
     roleType: "DOMAIN ADVISORY",
     primaryObjective: "Validate pharmaceutical supply-chain and procurement workflows for E-Ledger.",
+    seoDescription: "Synthrova Technologies is seeking a Pharmaceutical Supply Chain & Procurement Advisor to validate multi-party logistics and procurement workflows for E-Ledger.",
+    shareDescription: "Synthrova Technologies is seeking a pharma supply chain advisor to validate procurement workflows for E-Ledger.",
     minQualifications: [
       "Bachelor's / Master's degree in Supply Chain, Operations, Pharmacy, Engineering, Management or related discipline.",
       "8+ years of pharmaceutical supply-chain / procurement experience.",
@@ -167,10 +224,13 @@ const SENIOR_ROLES: SeniorRole[] = [
     isAdvisor: true
   },
   {
-    number: "06",
+    number: "07",
+    slug: "audit-risk-compliance-advisor",
     title: "Audit, Risk & Compliance Advisor",
     roleType: "DOMAIN ADVISORY",
     primaryObjective: "Evaluate E-Ledger from an audit, control, risk and compliance perspective.",
+    seoDescription: "Synthrova Technologies is seeking an Audit, Risk & Compliance Advisor to evaluate E-Ledger from an audit, control, risk and automated reconciliation perspective.",
+    shareDescription: "Synthrova Technologies is seeking an audit and risk advisor to evaluate E-Ledger control and reconciliation frameworks.",
     minQualifications: [
       "CA / CPA / ACCA / CIA or equivalent professional qualification.",
       "8+ years of audit, risk, internal controls or compliance experience.",
@@ -195,10 +255,13 @@ const SENIOR_ROLES: SeniorRole[] = [
     isAdvisor: true
   },
   {
-    number: "07",
+    number: "08",
+    slug: "enterprise-architecture-technology-strategy-advisor",
     title: "Enterprise Architecture / Technology Strategy Advisor",
     roleType: "TECHNOLOGY STRATEGY ADVISORY",
     primaryObjective: "Provide enterprise architecture and technology strategy perspective as E-Ledger moves toward enterprise adoption.",
+    seoDescription: "Synthrova Technologies is seeking an Enterprise Architecture / Technology Strategy Advisor to guide enterprise integration and technology strategy for E-Ledger.",
+    shareDescription: "Synthrova Technologies is seeking an enterprise architecture advisor to guide technology strategy for E-Ledger.",
     minQualifications: [
       "Bachelor's or Master's degree in Computer Science, Engineering, IT or related field.",
       "12+ years of enterprise technology experience.",
@@ -227,10 +290,13 @@ const SENIOR_ROLES: SeniorRole[] = [
     isAdvisor: true
   },
   {
-    number: "08",
+    number: "09",
+    slug: "investor-strategic-partnerships-advisor",
     title: "Investor & Strategic Partnerships Advisor",
     roleType: "STRATEGIC ADVISORY",
     primaryObjective: "Support Synthrova's strategic ecosystem development and institutional fundraising readiness.",
+    seoDescription: "Synthrova Technologies is seeking an Investor & Strategic Partnerships Advisor to support ecosystem development and institutional fundraising readiness.",
+    shareDescription: "Synthrova Technologies is seeking an advisor to support ecosystem partnerships and investor alignment.",
     minQualifications: [
       "10+ years in venture capital, investment banking, corporate strategy, startup ecosystem, enterprise partnerships or fundraising.",
       "Demonstrated experience working with founders, investors or enterprise strategic partners.",
@@ -288,6 +354,35 @@ const INTERNSHIPS = [
 ];
 
 function generateMailtoLink(subject: string, roleTitle: string, isAdvisor: boolean = false): string {
+  if (subject.includes("COO / President") || roleTitle.includes("Chief Operating Officer")) {
+    const cooBody = `Dear Synthrova Technologies Founding Team,
+
+I am writing to submit my application for the Chief Operating Officer / President — Pharma Industry & Strategic Partnerships position at Synthrova Technologies.
+
+Please find my credentials and application details below:
+
+Full Name: [Your Name]
+Current Location: [Your Location]
+LinkedIn Profile: [URL]
+Resume / Executive Profile: [Attached / Link]
+
+1. Significant Pharmaceutical Industry Initiative:
+[Brief statement describing your most significant pharmaceutical industry initiative]
+
+2. Cross-Organizational Programs Led:
+[Examples of cross-organizational or cross-functional programs you have led]
+
+3. Pharmaceutical Industry Relationships & Ecosystem Experience:
+[Overview of established relationships across manufacturers, distributors, hospitals, regulators, or industry associations]
+
+4. Approach to Securing Synthrova's First Pharmaceutical Design Partner:
+[A short note describing your strategic approach to securing live, measurable enterprise pilots]
+
+Regards,
+[Your Name]`;
+    return `mailto:careers@synthrova.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(cooBody)}`;
+  }
+
   const intro = isAdvisor 
     ? `Dear Synthrova Technologies Team,\n\nI am writing to express my interest in the ${roleTitle} opportunity at Synthrova Technologies.\n\nPlease find my background summary / CV attached for your consideration.\n\nFull Name: [Your Name]\nCurrent Location: [Your Location]\nLinkedIn / Profile: [URL]\nSummary of Background & Strategic Alignment:\n[Brief overview]\n\nRegards,\n[Your Name]`
     : `Dear Synthrova Technologies Team,\n\nI am writing to apply for the ${roleTitle} opportunity at Synthrova Technologies.\n\nPlease find my CV/resume attached for your consideration.\n\nFull Name: [Your Name]\nCurrent Location: [Your Location]\nLinkedIn / GitHub / Portfolio: [URL]\nRelevant Experience & Focus:\n[Brief overview]\n\nRegards,\n[Your Name]`;
@@ -297,18 +392,38 @@ function generateMailtoLink(subject: string, roleTitle: string, isAdvisor: boole
 
 export function Careers() {
   const { hash } = useLocation();
+  const { roleSlug } = useParams<{ roleSlug?: string }>();
   const [expandedRoles, setExpandedRoles] = useState<Record<string, boolean>>({ "01": true });
 
+  const activeRole = roleSlug ? SENIOR_ROLES.find(r => r.slug === roleSlug) : undefined;
+
   useEffect(() => {
-    if (!hash) {
+    if (roleSlug) {
+      const matched = SENIOR_ROLES.find(r => r.slug === roleSlug);
+      if (matched) {
+        setExpandedRoles(prev => ({ ...prev, [matched.number]: true }));
+        const timer = setTimeout(() => {
+          const el = document.getElementById(matched.slug) || document.getElementById(`role-${matched.number}`);
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 150);
+        return () => clearTimeout(timer);
+      }
+    } else if (!hash) {
       window.scrollTo(0, 0);
     } else {
-      const el = document.getElementById(hash.replace("#", ""));
+      const targetId = hash.replace("#", "");
+      const el = document.getElementById(targetId);
       if (el) {
+        // If targeting role-01 or coo-president-pharma, ensure role 01 is expanded
+        if (targetId === "role-01" || targetId === "coo-president-pharma" || targetId === "apply-coo") {
+          setExpandedRoles(prev => ({ ...prev, "01": true }));
+        }
         el.scrollIntoView({ behavior: "smooth" });
       }
     }
-  }, [hash]);
+  }, [roleSlug, hash]);
 
   const toggleRole = (number: string) => {
     setExpandedRoles(prev => ({
@@ -326,20 +441,101 @@ export function Careers() {
     setExpandedRoles({});
   };
 
-  const seoSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Careers | Synthrova Technologies",
-    "description": "Explore leadership, founding-team, advisory, enterprise technology and remote internship opportunities at Synthrova Technologies as we build E-Ledger for regulated supply chains.",
-    "url": "https://synthrova.in/careers"
-  };
+  const pageTitle = activeRole
+    ? activeRole.slug === "coo-president-pharma"
+      ? "Chief Operating Officer / President — Pharma Industry & Strategic Partnerships | Synthrova Technologies"
+      : `${activeRole.title} | Synthrova Technologies`
+    : "Careers & Leadership Opportunities | Synthrova Technologies";
+
+  const pageDescription = activeRole
+    ? activeRole.seoDescription
+    : "Explore executive leadership (COO / President), founding-team, strategic advisory and remote internship opportunities at Synthrova Technologies as we build E-Ledger for regulated supply chains.";
+
+  const pageCanonical = activeRole
+    ? `/careers/${activeRole.slug}`
+    : "/careers";
+
+  const seoSchema = activeRole
+    ? {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "name": pageTitle,
+            "description": pageDescription,
+            "url": `https://synthrova.in${pageCanonical}`
+          },
+          {
+            "@type": "JobPosting",
+            "title": activeRole.title,
+            "description": activeRole.seoDescription,
+            "identifier": {
+              "@type": "PropertyValue",
+              "name": "Synthrova Technologies",
+              "value": `SYNTHROVA-${activeRole.number}-${activeRole.slug.toUpperCase()}`
+            },
+            "datePosted": "2026-03-01",
+            "employmentType": activeRole.isAdvisor ? "PART_TIME" : "FULL_TIME",
+            "hiringOrganization": {
+              "@type": "Organization",
+              "name": "Synthrova Technologies Pvt. Ltd.",
+              "sameAs": "https://synthrova.in",
+              "logo": "https://res.cloudinary.com/ocra7s5x/image/upload/v1787317143/1000269269.png"
+            },
+            "jobLocation": {
+              "@type": "Place",
+              "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "IN"
+              }
+            }
+          }
+        ]
+      }
+    : {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "name": "Careers & Leadership Opportunities | Synthrova Technologies",
+            "description": "Explore executive leadership, founding-team, strategic advisory and remote internship opportunities at Synthrova Technologies as we build E-Ledger for regulated supply chains.",
+            "url": "https://synthrova.in/careers"
+          },
+          {
+            "@type": "JobPosting",
+            "title": "Chief Operating Officer / President — Pharma Industry & Strategic Partnerships",
+            "description": "Lead pharmaceutical industry strategy, design partner acquisition, consortium development and enterprise GTM for E-Ledger across the pharmaceutical ecosystem.",
+            "identifier": {
+              "@type": "PropertyValue",
+              "name": "Synthrova Technologies",
+              "value": "SYNTHROVA-COO-PHARMA"
+            },
+            "datePosted": "2026-03-01",
+            "employmentType": "FULL_TIME",
+            "hiringOrganization": {
+              "@type": "Organization",
+              "name": "Synthrova Technologies Pvt. Ltd.",
+              "sameAs": "https://synthrova.in",
+              "logo": "https://res.cloudinary.com/ocra7s5x/image/upload/v1787317143/1000269269.png"
+            },
+            "jobLocation": {
+              "@type": "Place",
+              "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "IN"
+              }
+            }
+          }
+        ]
+      };
 
   return (
     <div className="w-full selection:bg-synthrova-blue/30 selection:text-synthrova-black bg-synthrova-white min-h-screen text-synthrova-black">
       <SEO
-        title="Careers | Synthrova Technologies"
-        description="Explore leadership, founding-team, advisory, enterprise technology and remote internship opportunities at Synthrova Technologies as we build E-Ledger for regulated supply chains."
-        canonical="/careers"
+        title={pageTitle}
+        description={pageDescription}
+        canonical={pageCanonical}
+        ogImage="https://res.cloudinary.com/ocra7s5x/image/upload/v1787317143/1000269269.png"
         schema={seoSchema}
       />
 
@@ -467,7 +663,7 @@ export function Careers() {
       {/* ROLE DIRECTORY */}
       <section id="opportunities" className="py-24 md:py-32 bg-synthrova-offwhite text-synthrova-black border-b border-synthrova-lightgrey/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
             <div>
               <div className="font-mono text-xs tracking-widest text-synthrova-blue uppercase mb-3">
                 EDITORIAL ROLE DIRECTORY
@@ -476,7 +672,7 @@ export function Careers() {
                 Founding Leadership &amp; Advisory Directory
               </h2>
               <p className="text-lg md:text-xl font-light text-synthrova-black/70 max-w-3xl">
-                Explore our strategic opportunities. Each role represents a critical capability to advance E-Ledger toward enterprise pilots and production.
+                Explore our strategic opportunities. Each role represents a distinct capability to advance E-Ledger from Proof of Concept toward design partnerships, enterprise pilots and production.
               </p>
             </div>
             <div className="flex items-center gap-3">
@@ -497,46 +693,148 @@ export function Careers() {
             </div>
           </div>
 
+          {/* ROLE DIFFERENTIATION & STRATEGIC FOCUS MATRIX */}
+          <div className="mb-12 bg-synthrova-white border border-synthrova-lightgrey/30 p-6 md:p-8">
+            <div className="flex flex-col md:flex-row md:items-center justify-between pb-4 mb-6 border-b border-synthrova-lightgrey/20 gap-2">
+              <div className="font-mono text-xs tracking-widest uppercase text-synthrova-blue">
+                STRATEGIC FOCUS &amp; ROLE DIFFERENTIATION
+              </div>
+              <div className="font-mono text-[11px] text-synthrova-black/50">
+                Distinct Organizational Mandates
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-xs font-light">
+              <div className="p-4 border border-synthrova-blue/30 bg-synthrova-blue/5">
+                <div className="font-mono text-xs font-bold text-synthrova-black mb-1 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-synthrova-blue rounded-full" />
+                  COO / PRESIDENT
+                </div>
+                <p className="text-synthrova-black/80 leading-relaxed">
+                  Pharmaceutical industry leadership, market creation, strategic partnerships, enterprise adoption and industry relationships.
+                </p>
+              </div>
+
+              <div className="p-4 border border-synthrova-lightgrey/30 bg-synthrova-white">
+                <div className="font-mono text-xs font-bold text-synthrova-black mb-1 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-synthrova-black/40 rounded-full" />
+                  CTO / TECHNICAL CO-FOUNDER
+                </div>
+                <p className="text-synthrova-black/80 leading-relaxed">
+                  Technical architecture, engineering leadership, security, infrastructure and product delivery.
+                </p>
+              </div>
+
+              <div className="p-4 border border-synthrova-lightgrey/30 bg-synthrova-white">
+                <div className="font-mono text-xs font-bold text-synthrova-black mb-1 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-synthrova-black/40 rounded-full" />
+                  FOUNDING GTM LEAD
+                </div>
+                <p className="text-synthrova-black/80 leading-relaxed">
+                  Direct enterprise business development, design partners, pilots and commercial traction.
+                </p>
+              </div>
+
+              <div className="p-4 border border-synthrova-lightgrey/30 bg-synthrova-white">
+                <div className="font-mono text-xs font-bold text-synthrova-black mb-1 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-synthrova-black/40 rounded-full" />
+                  STRATEGIC GTM ADVISOR
+                </div>
+                <p className="text-synthrova-black/80 leading-relaxed">
+                  Senior strategic guidance, relationships and introductions on an advisory basis.
+                </p>
+              </div>
+
+              <div className="p-4 border border-synthrova-lightgrey/30 bg-synthrova-white">
+                <div className="font-mono text-xs font-bold text-synthrova-black mb-1 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-synthrova-black/40 rounded-full" />
+                  DOMAIN ADVISORS
+                </div>
+                <p className="text-synthrova-black/80 leading-relaxed">
+                  Pharma QA, supply chain, procurement and audit/control workflow validation.
+                </p>
+              </div>
+
+              <div className="p-4 border border-synthrova-lightgrey/30 bg-synthrova-white">
+                <div className="font-mono text-xs font-bold text-synthrova-black mb-1 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-synthrova-black/40 rounded-full" />
+                  STRATEGY &amp; INVESTOR ADVISORS
+                </div>
+                <p className="text-synthrova-black/80 leading-relaxed">
+                  Enterprise technology architecture, strategic ecosystems and investor network alignment.
+                </p>
+              </div>
+            </div>
+
+            {/* Sequence disclaimer note */}
+            <div className="mt-4 pt-4 border-t border-synthrova-lightgrey/20 flex items-center gap-2 text-[11px] font-mono text-synthrova-black/60">
+              <span className="w-1.5 h-1.5 bg-synthrova-blue rounded-full flex-shrink-0" />
+              <span>
+                <strong>Sequence Notice:</strong> The numerical sequence (01 to 09) reflects page organization and does not imply priority, ranking or preference.
+              </span>
+            </div>
+          </div>
+
           <div className="space-y-6">
             {SENIOR_ROLES.map((role) => {
               const isExpanded = !!expandedRoles[role.number];
               const mailtoUrl = generateMailtoLink(role.emailSubject, role.title, role.isAdvisor);
+              const isCoo = role.number === "01";
+              const isMatchedRoute = roleSlug === role.slug;
 
               return (
                 <div
                   key={role.number}
-                  id={`role-${role.number}`}
-                  className={`bg-synthrova-white border transition-all duration-300 ${
-                    isExpanded 
-                      ? "border-synthrova-blue/80 shadow-[0_4px_30px_rgba(0,188,212,0.06)]" 
-                      : "border-synthrova-lightgrey/30 hover:border-synthrova-lightgrey/70"
+                  id={role.slug}
+                  className={`scroll-mt-28 bg-synthrova-white border transition-all duration-300 ${
+                    isMatchedRoute
+                      ? "border-synthrova-blue ring-2 ring-synthrova-blue/50 shadow-[0_8px_40px_rgba(0,188,212,0.12)]"
+                      : isExpanded 
+                        ? isCoo
+                          ? "border-synthrova-blue shadow-[0_6px_35px_rgba(0,188,212,0.09)] ring-1 ring-synthrova-blue/30"
+                          : "border-synthrova-blue/80 shadow-[0_4px_30px_rgba(0,188,212,0.06)]" 
+                        : "border-synthrova-lightgrey/30 hover:border-synthrova-lightgrey/70"
                   }`}
                 >
-                  {/* Role Header Bar */}
-                  <div className="p-6 md:p-10">
-                    <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-                      <div className="flex items-start gap-4 md:gap-6">
-                        <span className="font-mono text-2xl md:text-3xl text-synthrova-blue font-light flex-shrink-0">
-                          {role.number}
-                        </span>
-                        <div>
-                          <div className="flex flex-wrap items-center gap-3 mb-2">
-                            <span className="font-mono text-xs tracking-widest uppercase text-synthrova-black/50 border border-synthrova-lightgrey/40 px-2.5 py-0.5">
-                              {role.roleType}
-                            </span>
-                            <span className="font-mono text-xs tracking-widest uppercase text-synthrova-blue/90">
-                              {role.engagement}
-                            </span>
+                  {/* Anchor alias for direct linking */}
+                  <div id={`role-${role.number}`} className="-mt-28 pt-28 pointer-events-none" />
+                  <div id={`target-${role.slug}`} className="-mt-28 pt-28 pointer-events-none" />
+                  {isCoo && <div id="coo-president-pharma" className="-mt-28 pt-28 pointer-events-none" />}
+
+                    {/* Role Header Bar */}
+                    <div className={`p-6 md:p-10 ${isCoo ? "bg-gradient-to-r from-synthrova-white via-synthrova-white to-synthrova-offwhite/40" : ""}`}>
+                      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                        <div className="flex items-start gap-4 md:gap-6">
+                          <span className="font-mono text-2xl md:text-3xl text-synthrova-blue font-light flex-shrink-0">
+                            {role.number}
+                          </span>
+                          <div>
+                            <div className="flex flex-wrap items-center gap-3 mb-2">
+                              <span className={`font-mono text-xs tracking-widest uppercase px-2.5 py-0.5 ${
+                                isCoo 
+                                  ? "text-synthrova-white bg-synthrova-black font-medium" 
+                                  : "text-synthrova-black/50 border border-synthrova-lightgrey/40"
+                              }`}>
+                                {role.roleType}
+                              </span>
+                              <span className="font-mono text-xs tracking-widest uppercase text-synthrova-blue/90">
+                                {role.engagement}
+                              </span>
+                              {isMatchedRoute && (
+                                <span className="font-mono text-[10px] tracking-widest uppercase px-2 py-0.5 bg-synthrova-blue/15 text-synthrova-blue border border-synthrova-blue/30">
+                                  Linked Opportunity
+                                </span>
+                              )}
+                            </div>
+                            <h3 className="text-2xl md:text-3xl font-light tracking-tight text-synthrova-black mb-3">
+                              {role.title}
+                            </h3>
+                            <p className="text-base md:text-lg font-light text-synthrova-black/75">
+                              <strong className="font-medium text-synthrova-black">Primary Objective:</strong>{" "}
+                              {role.primaryObjective}
+                            </p>
                           </div>
-                          <h3 className="text-2xl md:text-3xl font-light tracking-tight text-synthrova-black mb-3">
-                            {role.title}
-                          </h3>
-                          <p className="text-base md:text-lg font-light text-synthrova-black/75">
-                            <strong className="font-medium text-synthrova-black">Primary Objective:</strong>{" "}
-                            {role.primaryObjective}
-                          </p>
                         </div>
-                      </div>
 
                       {/* Header Actions */}
                       <div className="flex items-center gap-4 pt-2 lg:pt-0 lg:flex-shrink-0">
@@ -570,77 +868,93 @@ export function Careers() {
                         transition={{ duration: 0.3 }}
                         className="overflow-hidden border-t border-synthrova-lightgrey/20 bg-synthrova-offwhite/50"
                       >
-                        <div className="p-6 md:p-10 grid grid-cols-1 lg:grid-cols-3 gap-8">
-                          {/* Minimum Qualifications */}
-                          <div className="bg-synthrova-white p-6 border border-synthrova-lightgrey/20">
-                            <div className="font-mono text-xs tracking-widest uppercase text-synthrova-black/50 mb-4 pb-2 border-b border-synthrova-lightgrey/20 flex items-center justify-between">
-                              <span>MINIMUM QUALIFICATIONS</span>
-                              <span className="text-[10px] text-synthrova-blue">REQUIRED</span>
-                            </div>
-                            <ul className="space-y-3 text-sm font-light text-synthrova-black/80 leading-relaxed">
-                              {role.minQualifications.map((item, idx) => (
-                                <li key={idx} className="flex items-start gap-2.5">
-                                  <span className="w-1.5 h-1.5 bg-synthrova-black/40 rounded-full mt-2 flex-shrink-0" />
-                                  <span>{item}</span>
-                                </li>
-                              ))}
-                            </ul>
+                        {/* If COO / President, render the deep executive suite */}
+                        {isCoo ? (
+                          <div className="p-6 md:p-10">
+                            <CooExecutiveRoleDetail mailtoUrl={mailtoUrl} />
                           </div>
-
-                          {/* Preferred Qualifications */}
-                          <div className="bg-synthrova-white p-6 border border-synthrova-lightgrey/20">
-                            <div className="font-mono text-xs tracking-widest uppercase text-synthrova-black/50 mb-4 pb-2 border-b border-synthrova-lightgrey/20 flex items-center justify-between">
-                              <span>PREFERRED QUALIFICATIONS</span>
-                              <span className="text-[10px] text-synthrova-black/40">DESIRABLE</span>
-                            </div>
-                            <ul className="space-y-3 text-sm font-light text-synthrova-black/80 leading-relaxed">
-                              {role.prefQualifications.map((item, idx) => (
-                                <li key={idx} className="flex items-start gap-2.5">
-                                  <span className="w-1.5 h-1.5 bg-synthrova-blue/70 rounded-full mt-2 flex-shrink-0" />
-                                  <span>{item}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-
-                          {/* Eligibility & Engagement Details */}
-                          <div className="bg-synthrova-white p-6 border border-synthrova-lightgrey/20 flex flex-col justify-between">
-                            <div>
-                              <div className="font-mono text-xs tracking-widest uppercase text-synthrova-black/50 mb-4 pb-2 border-b border-synthrova-lightgrey/20">
-                                ELIGIBILITY &amp; EXPECTATIONS
+                        ) : (
+                          /* Otherwise render standard 3-column panel */
+                          <div className="p-6 md:p-10 grid grid-cols-1 lg:grid-cols-3 gap-8">
+                            {/* Minimum Qualifications */}
+                            <div className="bg-synthrova-white p-6 border border-synthrova-lightgrey/20">
+                              <div className="font-mono text-xs tracking-widest uppercase text-synthrova-black/50 mb-4 pb-2 border-b border-synthrova-lightgrey/20 flex items-center justify-between">
+                                <span>MINIMUM QUALIFICATIONS</span>
+                                <span className="text-[10px] text-synthrova-blue">REQUIRED</span>
                               </div>
-                              <ul className="space-y-3 text-sm font-light text-synthrova-black/80 leading-relaxed mb-6">
-                                {role.eligibility.map((item, idx) => (
+                              <ul className="space-y-3 text-sm font-light text-synthrova-black/80 leading-relaxed">
+                                {role.minQualifications.map((item, idx) => (
                                   <li key={idx} className="flex items-start gap-2.5">
-                                    <Check className="w-4 h-4 text-synthrova-blue mt-0.5 flex-shrink-0" />
+                                    <span className="w-1.5 h-1.5 bg-synthrova-black/40 rounded-full mt-2 flex-shrink-0" />
                                     <span>{item}</span>
                                   </li>
                                 ))}
                               </ul>
-                              <div className="pt-4 border-t border-synthrova-lightgrey/20">
-                                <div className="font-mono text-[11px] tracking-widest uppercase text-synthrova-black/50 mb-1">
-                                  ENGAGEMENT STRUCTURE
-                                </div>
-                                <p className="text-xs font-light text-synthrova-black/80 leading-relaxed">
-                                  {role.engagement}
-                                </p>
-                              </div>
                             </div>
 
-                            {/* Full Apply Button */}
-                            <div className="mt-8 pt-4 border-t border-synthrova-lightgrey/20">
-                              <a
-                                href={mailtoUrl}
-                                className="w-full py-3.5 px-6 bg-synthrova-black text-synthrova-white text-xs md:text-sm font-medium tracking-wide uppercase hover:bg-synthrova-blue transition-colors flex items-center justify-center group"
-                              >
-                                <span>{role.applyButtonText}</span>
-                              </a>
-                              <p className="text-[11px] font-mono text-synthrova-black/50 text-center mt-2">
-                                Submissions: careers@synthrova.in
-                              </p>
+                            {/* Preferred Qualifications */}
+                            <div className="bg-synthrova-white p-6 border border-synthrova-lightgrey/20">
+                              <div className="font-mono text-xs tracking-widest uppercase text-synthrova-black/50 mb-4 pb-2 border-b border-synthrova-lightgrey/20 flex items-center justify-between">
+                                <span>PREFERRED QUALIFICATIONS</span>
+                                <span className="text-[10px] text-synthrova-black/40">DESIRABLE</span>
+                              </div>
+                              <ul className="space-y-3 text-sm font-light text-synthrova-black/80 leading-relaxed">
+                                {role.prefQualifications.map((item, idx) => (
+                                  <li key={idx} className="flex items-start gap-2.5">
+                                    <span className="w-1.5 h-1.5 bg-synthrova-blue/70 rounded-full mt-2 flex-shrink-0" />
+                                    <span>{item}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+
+                            {/* Eligibility & Engagement Details */}
+                            <div className="bg-synthrova-white p-6 border border-synthrova-lightgrey/20 flex flex-col justify-between">
+                              <div>
+                                <div className="font-mono text-xs tracking-widest uppercase text-synthrova-black/50 mb-4 pb-2 border-b border-synthrova-lightgrey/20">
+                                  ELIGIBILITY &amp; EXPECTATIONS
+                                </div>
+                                <ul className="space-y-3 text-sm font-light text-synthrova-black/80 leading-relaxed mb-6">
+                                  {role.eligibility.map((item, idx) => (
+                                    <li key={idx} className="flex items-start gap-2.5">
+                                      <Check className="w-4 h-4 text-synthrova-blue mt-0.5 flex-shrink-0" />
+                                      <span>{item}</span>
+                                    </li>
+                                  ))}
+                                </ul>
+                                <div className="pt-4 border-t border-synthrova-lightgrey/20">
+                                  <div className="font-mono text-[11px] tracking-widest uppercase text-synthrova-black/50 mb-1">
+                                    ENGAGEMENT STRUCTURE
+                                  </div>
+                                  <p className="text-xs font-light text-synthrova-black/80 leading-relaxed">
+                                    {role.engagement}
+                                  </p>
+                                </div>
+                              </div>
+
+                              {/* Full Apply Button */}
+                              <div className="mt-8 pt-4 border-t border-synthrova-lightgrey/20">
+                                <a
+                                  href={mailtoUrl}
+                                  className="w-full py-3.5 px-6 bg-synthrova-black text-synthrova-white text-xs md:text-sm font-medium tracking-wide uppercase hover:bg-synthrova-blue transition-colors flex items-center justify-center group"
+                                >
+                                  <span>{role.applyButtonText}</span>
+                                </a>
+                                <p className="text-[11px] font-mono text-synthrova-black/50 text-center mt-2">
+                                  Submissions: careers@synthrova.in
+                                </p>
+
+                                {/* Compact Native Share Section */}
+                                <ShareOpportunity
+                                  roleTitle={role.title}
+                                  slug={role.slug}
+                                  shareDescription={role.shareDescription}
+                                  className="mt-6"
+                                />
+                              </div>
                             </div>
                           </div>
-                        </div>
+                        )}
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -721,13 +1035,22 @@ export function Careers() {
                     </div>
                   </div>
 
-                  <a
-                    href={internMailto}
-                    className="w-full py-3 px-4 bg-transparent border border-synthrova-white/20 text-xs font-mono uppercase tracking-widest text-synthrova-white hover:bg-synthrova-blue hover:border-synthrova-blue hover:text-synthrova-white transition-colors flex items-center justify-center group"
-                  >
-                    <span>Apply for Internship</span>
-                    <ArrowRight className="ml-2 w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                  </a>
+                  <div className="pt-4 border-t border-synthrova-white/10 space-y-4">
+                    <a
+                      href={internMailto}
+                      className="w-full py-3 px-4 bg-transparent border border-synthrova-white/20 text-xs font-mono uppercase tracking-widest text-synthrova-white hover:bg-synthrova-blue hover:border-synthrova-blue hover:text-synthrova-white transition-colors flex items-center justify-center group"
+                    >
+                      <span>Apply for Internship</span>
+                      <ArrowRight className="ml-2 w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    </a>
+
+                    <ShareOpportunity
+                      roleTitle={`Remote Internship — ${intern.title}`}
+                      slug="careers#internships"
+                      shareDescription={`Explore remote internship opportunities at Synthrova Technologies: ${intern.title}.`}
+                      isDarkTheme
+                    />
+                  </div>
                 </div>
               );
             })}
