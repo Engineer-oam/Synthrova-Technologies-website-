@@ -2,4 +2,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://synthrova.in/sitemap.xml
-Sitemap: https://synthrova.in/site.xml

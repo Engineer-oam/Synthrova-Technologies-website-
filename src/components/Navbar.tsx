@@ -59,7 +59,8 @@ export function Navbar() {
     "/contact",
     "/leadership",
     "/industries/pharmaceuticals",
-    "/updates/design-partners-audit-ca"
+    "/updates/design-partners-audit-ca",
+    "/sitemap"
   ];
   const isDarkBg = darkHeroRoutes.includes(location.pathname) && !scrolled;
 
