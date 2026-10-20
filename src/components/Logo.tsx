@@ -7,24 +7,31 @@ interface LogoProps {
 
 
 export function SynthrovaLogo({ className = "", isDarkTheme = false }: LogoProps) {
+  // Logo for dark background vs logo for white background
+  const darkBgLogo = "https://res.cloudinary.com/ocra7s5x/image/upload/v1792299156/1000287125-removebg-preview.png";
+  const whiteBgLogo = "https://res.cloudinary.com/ocra7s5x/image/upload/v1792299433/1000287127-removebg-preview.png";
+
   return (
     <div className={`flex items-center gap-[8px] md:gap-[10px] shrink-0 ${className}`}>
-      <div className="relative shrink-0 flex items-center justify-center h-[36px] md:h-[42px] lg:h-[48px]">
-        {/* Light Theme Logo (For white background) */}
+      <div className="relative shrink-0 flex items-center justify-center h-[36px] md:h-[42px] lg:h-[48px] w-[36px] md:w-[42px] lg:w-[48px]">
+        {/* White Background Logo (visible on light backgrounds) */}
         <img 
-          src="https://res.cloudinary.com/ocra7s5x/image/upload/v1787317143/1000269269.png" 
-          alt="" 
-          referrerPolicy="no-referrer"
-          className="h-full w-auto object-contain transition-opacity duration-300 ease-in-out motion-reduce:transition-none absolute left-0 top-0" 
-          style={{ opacity: isDarkTheme ? 0 : 1 }}
-        />
-        {/* Dark Theme Logo (For black background) */}
-        <img 
-          src="https://res.cloudinary.com/ocra7s5x/image/upload/v1787317143/1000269269.png" 
+          src={whiteBgLogo} 
           alt="Synthrova Technologies" 
           referrerPolicy="no-referrer"
-          className="h-full w-auto object-contain transition-opacity duration-300 ease-in-out motion-reduce:transition-none relative z-10" 
-          style={{ opacity: isDarkTheme ? 1 : 0 }}
+          className="h-full w-full object-contain transition-opacity duration-300 ease-in-out absolute inset-0" 
+          style={{ opacity: isDarkTheme ? 0 : 1 }}
+        />
+        {/* Dark Background Logo (visible on dark backgrounds) */}
+        <img 
+          src={darkBgLogo} 
+          alt="Synthrova Technologies" 
+          referrerPolicy="no-referrer"
+          className="h-full w-full object-contain transition-opacity duration-300 ease-in-out absolute inset-0 z-10 origin-center" 
+          style={{ 
+            opacity: isDarkTheme ? 1 : 0,
+            transform: 'scale(1.307)',
+          }}
         />
       </div>
       

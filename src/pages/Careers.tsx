@@ -480,7 +480,7 @@ export function Careers() {
               "@type": "Organization",
               "name": "Synthrova Technologies Pvt. Ltd.",
               "sameAs": "https://synthrova.in",
-              "logo": "https://res.cloudinary.com/ocra7s5x/image/upload/v1787317143/1000269269.png"
+              "logo": "https://res.cloudinary.com/ocra7s5x/image/upload/v1792299156/1000287125-removebg-preview.png"
             },
             "jobLocation": {
               "@type": "Place",
@@ -516,7 +516,7 @@ export function Careers() {
               "@type": "Organization",
               "name": "Synthrova Technologies Pvt. Ltd.",
               "sameAs": "https://synthrova.in",
-              "logo": "https://res.cloudinary.com/ocra7s5x/image/upload/v1787317143/1000269269.png"
+              "logo": "https://res.cloudinary.com/ocra7s5x/image/upload/v1792299156/1000287125-removebg-preview.png"
             },
             "jobLocation": {
               "@type": "Place",
@@ -535,7 +535,7 @@ export function Careers() {
         title={pageTitle}
         description={pageDescription}
         canonical={pageCanonical}
-        ogImage="https://res.cloudinary.com/ocra7s5x/image/upload/v1787317143/1000269269.png"
+        ogImage="https://res.cloudinary.com/ocra7s5x/image/upload/v1792299156/1000287125-removebg-preview.png"
         schema={seoSchema}
       />
 

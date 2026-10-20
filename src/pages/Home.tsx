@@ -163,7 +163,7 @@ export function Home() {
             "name": "Synthrova Technologies",
             "legalName": "Synthrova Technologies India",
             "url": "https://synthrova.in",
-            "logo": "https://synthrova.in/images/logo-dark.png",
+            "logo": "https://res.cloudinary.com/ocra7s5x/image/upload/v1792299156/1000287125-removebg-preview.png",
             "description": "Synthrova Technologies builds compliance infrastructure for regulated supply chains, specializing in auditability, traceability, and structured transaction evidence.",
             "contactPoint": {
               "@type": "ContactPoint",

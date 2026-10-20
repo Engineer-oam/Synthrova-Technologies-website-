@@ -41,6 +41,7 @@ export function Footer() {
             <li><Link to="/privacy" className="hover:text-synthrova-white transition-colors">Privacy Policy</Link></li>
             <li><Link to="/terms" className="hover:text-synthrova-white transition-colors">Terms of Service</Link></li>
             <li><Link to="/contact" className="hover:text-synthrova-white transition-colors">Contact</Link></li>
+            <li><a href="/sitemap.xml" target="_blank" rel="noopener noreferrer" className="hover:text-synthrova-white transition-colors">Sitemap</a></li>
           </ul>
         </div>
 
